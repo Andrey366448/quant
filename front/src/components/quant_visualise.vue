@@ -1,6 +1,6 @@
 <template>
   <div class="quant-container">
-    <h2>Квантовая визуализация</h2>
+    <h2>Запуск алгоритмов</h2>
 
     <!-- КНОПКИ ЗАПУСКА АЛГОРИТМОВ -->
     <div class="button-row">
@@ -29,18 +29,9 @@
           title="Скачать submission.csv и total_time.csv (QI)"
           style="margin-left: 8px;"
         >
-          Скачать CSV (QI)
+          Скачать результаты CSV
         </button>
       </div>
-
-      <button
-        v-if="hasGraphMinQi"
-        class="btn accent"
-        @click="openGraphMinQi"
-        aria-label="Открыть graph_min.png (QI)"
-      >
-        граф с минимальным временем (QI)
-      </button>
 
       <div v-if="showListQi" class="content">
         <div class="list">
@@ -95,18 +86,9 @@
           title="Скачать submission.csv и total_time.csv (QF)"
           style="margin-left: 8px;"
         >
-          Скачать CSV (QF)
+          Скачать  результаты CSV
         </button>
       </div>
-
-      <button
-        v-if="hasGraphMinQf"
-        class="btn accent"
-        @click="openGraphMinQf"
-        aria-label="Открыть graph_min.png (QF)"
-      >
-        граф с минимальным временем (QF)
-      </button>
 
       <div v-if="showListQf" class="content">
         <div class="list">
@@ -390,7 +372,6 @@ export default {
   border: 1px solid #cfe1ff;
 }
 .files li.empty {
-  color: #888;
   cursor: default;
 }
 
@@ -407,7 +388,6 @@ export default {
 .preview.placeholder {
   display: grid;
   place-items: center;
-  color: #666;
 }
 
 .preview-header {
@@ -455,7 +435,6 @@ export default {
 /* маленькая подсказка */
 .hint {
   margin-top: 8px;
-  color: #6b7280;
   font-size: 12px;
 }
 </style>

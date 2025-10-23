@@ -27,8 +27,6 @@ export default {
 /* ====== Темная тема, аккуратные отступы и нормальная прокрутка ====== */
 :root{
   --bg: #0f1216;
-  --panel: #161a20;
-  --panel-2:#1b2027;
   --text:#e8edf4;
   --muted:#9aa7b6;
   --primary:#5aa2ff;
@@ -67,18 +65,15 @@ html, body {
 *::-webkit-scrollbar-thumb {
   background-color: rgba(255,255,255,.18);
   border-radius: 999px;
-  border: 2px solid transparent;
   background-clip: padding-box;
 }
 *::-webkit-scrollbar-thumb:hover { background-color: rgba(255,255,255,.28); }
 
 /* Контейнер приложения */
 #app{
-  width: min(980px, 92vw);
   margin: 24px auto 64px;
-  padding: 24px;
+  padding: 60px;
   background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)) , var(--panel);
-  border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   display: flex;
@@ -99,12 +94,9 @@ html, body {
   background:
     linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)),
     var(--panel-2);
-  border: 1px solid var(--border);
   border-radius: calc(var(--radius) - 2px);
   box-shadow: var(--shadow-soft);
   position: sticky;
-  top: 12px;
-  z-index: 10;
   backdrop-filter: saturate(115%) blur(6px);
   -webkit-backdrop-filter: saturate(115%) blur(6px);
 }

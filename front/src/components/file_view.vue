@@ -2,17 +2,17 @@
   <div class="file-view-container">
     <!-- Кнопка для отображения списка файлов -->
     <button class="load-btn" @click="toggleFileList">
-      {{ showFiles ? 'Скрыть список файлов' : 'Посмотреть файлы' }}
+      {{ showFiles ? 'Скрыть список исходных данных' : 'Посмотреть исходные данные' }}
     </button>
 
     <!-- Кнопка для обновления списка файлов -->
     <button v-if="showFiles" class="load-btn" @click="loadFilesFromServer">
-      Обновить список файлов
+      Обновить файлы
     </button>
 
     <!-- Кнопка для скачивания всех файлов -->
     <button v-if="showFiles" class="load-btn" @click="downloadFiles">
-      Скачать все файлы
+      Скачать исходные данные
     </button>
 
     <!-- Список загруженных файлов, показывается при нажатии на кнопку -->
@@ -82,12 +82,13 @@ export default {
 
 <style scoped>
 .file-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 600px;
-  background-color: #333;
   color: white;
-  padding: 20px;
-  margin-top: 20px;
   border-radius: 10px;
 }
 
@@ -117,7 +118,6 @@ export default {
 }
 
 .file-list li {
-  background-color: #444;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;

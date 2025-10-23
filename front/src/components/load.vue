@@ -1,12 +1,11 @@
 <template>
-  <div class="load-container">
+  <div class="load-container-header">
     <h2>Загрузите файлы</h2>
-    
+    <div class="load-container">
     <!-- Кнопка загрузки файлов с клиента-->
     <button class="load-btn" @click="selectFiles">
-      Загрузить файл
+      Загрузить исходные данные data.csv
     </button>
-    <p>Файл должен быть zip или json</p>
     
     <input
       ref="fileInput"
@@ -23,13 +22,14 @@
 
     <!-- Кнопка для очистки всех файлов -->
     <button class="load-btn" @click="clearFiles">
-      Очистить все файлы
+      Очистить исходные данные
     </button>
 
     <!-- Список файлов с сервера -->
     <ul v-if="files.length > 0">
       <li v-for="(file, index) in files" :key="index">{{ file }}</li>
     </ul>
+    </div>
   </div>
 </template>
 
@@ -96,20 +96,19 @@ export default {
 </script>
 
 <style scoped>
+.load-container-header 
+
 .load-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-color: #333;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
 h2 {
-  background-color: #333;
   font-size: 24px;
   margin-bottom: 20px;
   color: white;
@@ -119,7 +118,6 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 30px;
-  background-color: #333;
   padding: 15px 30px;
   border-radius: 10px;
 }
