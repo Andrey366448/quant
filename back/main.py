@@ -9,6 +9,9 @@ from zipfile import ZipFile
 from uuid import uuid4
 from starlette.background import BackgroundTask
 import os
+import subprocess
+import start_all
+from visualizition_graph_quant import visualize_graphs
 
 import visualization_graph
 
@@ -31,6 +34,9 @@ VIS_QI_DIR = BASE_DIR / "visualised_qi"
 
 QF_DIR    = BASE_DIR / "quant_full"
 VIS_QF_DIR= QF_DIR / "visualised_qf"
+
+ROOT = Path(__file__).resolve().parent
+NODE_SCRIPT = ROOT / "quant_full" / "app.js"
 
 for p in (UPLOAD_DIR, SERVER_DIR, VIS_DIR):
     p.mkdir(parents=True, exist_ok=True)
@@ -87,7 +93,13 @@ async def quant_inspired():
 
 @app.post("/quant_full/")
 async def quant_full():
-
+    # subprocess.run(
+    #     ["node", str(NODE_SCRIPT)],
+    #     cwd=NODE_SCRIPT.parent,  # важный момент: рабочая директория = папка с app.js
+    #     check=True
+    # )
+    start_all.run_scripts()
+    visualize_graphs()
     return {"message": "Квантовый алгоритм завершил работу"}
 
 # ==== визуализации ====
@@ -203,13 +215,13 @@ def _make_bundle(files: list[tuple[Path, str]]) -> FileResponse:
 @app.get("/download/csv/bundle/qi")
 async def download_csv_bundle_qi():
     files = [
-        (BASE_DIR / "submission.csv",  "submission.csv"),
-        (BASE_DIR / "submissions.csv", "submission.csv"),
-        (BASE_DIR / "total_time.csv",  "total_time.csv"),
+        (BASE_DIR / "submission_inspired.csv",  "submission_inspired.csv"),
+        (BASE_DIR / "submissions_inspired.csv", "submission_inspired.csv"),
+        (BASE_DIR / "total_time_inspired.csv",  "total_time_inspired.csv"),
     ]
-    have_normal = (BASE_DIR / "submission.csv").exists()
+    have_normal = (BASE_DIR / "submission_inspired.csv").exists()
     if have_normal:
-        files = [f for f in files if f[0].name != "submissions.csv"]
+        files = [f for f in files if f[0].name != "submissions_inspired.csv"]
     return _make_bundle(files)
 
 @app.get("/download/csv/bundle/qf")

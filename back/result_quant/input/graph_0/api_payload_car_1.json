@@ -1,0 +1,5803 @@
+{
+  "elementsObject": {
+    "a076358926c940d59b30": {
+      "id": "a076358926c940d59b30",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.3141592653589793,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "6cc1970accea4d568dfd": {
+      "id": "6cc1970accea4d568dfd",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2566370614359172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "b5cba10d9ee24f4ca112": {
+      "id": "b5cba10d9ee24f4ca112",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2566370614359172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "aa9c7167eb5b478b9ec9": {
+      "id": "aa9c7167eb5b478b9ec9",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2566370614359172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3890e2b06dc244488f1b": {
+      "id": "3890e2b06dc244488f1b",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2566370614359172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "4187bc83128143eb8bec": {
+      "id": "4187bc83128143eb8bec",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.3141592653589793,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c6360c5515454239a325": {
+      "id": "c6360c5515454239a325",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2566370614359172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "d1ab1c2f2f2a42d8b314": {
+      "id": "d1ab1c2f2f2a42d8b314",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 3.8948621527822755,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "60d7dc7cfe1d4635b49e": {
+      "id": "60d7dc7cfe1d4635b49e",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.3369172916693652,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "cdf7a8b1a6b04d668eae": {
+      "id": "cdf7a8b1a6b04d668eae",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 3.8948621527822755,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "5212bd4f416147f8a8b4": {
+      "id": "5212bd4f416147f8a8b4",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.18237971875362,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "38800c94215140d6b2c4": {
+      "id": "38800c94215140d6b2c4",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.509427831252172,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "e814f3eb785447a493be": {
+      "id": "e814f3eb785447a493be",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.18237971875362,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "996c83ea37ba426fa13d": {
+      "id": "996c83ea37ba426fa13d",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.178783829265435,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "043a9a7adf0a4d2aa33e": {
+      "id": "043a9a7adf0a4d2aa33e",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.507270297559261,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "32d1d9488b1d4104a392": {
+      "id": "32d1d9488b1d4104a392",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.178783829265435,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2e12d7fbe9d24101baf9": {
+      "id": "2e12d7fbe9d24101baf9",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.000115087857965,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ee78a7cc6df84ed79416": {
+      "id": "ee78a7cc6df84ed79416",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.400069052714779,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f5321b59c99e4e3786fb": {
+      "id": "f5321b59c99e4e3786fb",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.000115087857965,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "dcb4ae97da9b43ca970c": {
+      "id": "dcb4ae97da9b43ca970c",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.0652250375268535,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "7f2994c6aaf94c6eaac8": {
+      "id": "7f2994c6aaf94c6eaac8",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.439135022516112,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c5ff597e01fb4f0a9b2a": {
+      "id": "c5ff597e01fb4f0a9b2a",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.0652250375268535,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "16a6bbb44aac4e72bd42": {
+      "id": "16a6bbb44aac4e72bd42",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 3.616379549107036,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "9d39a358cfd041d5b377": {
+      "id": "9d39a358cfd041d5b377",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.1698277294642216,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "da380f66057242948f21": {
+      "id": "da380f66057242948f21",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 3.616379549107036,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "0c3dfcde06be41bfaf00": {
+      "id": "0c3dfcde06be41bfaf00",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.203922118634982,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "0267f071980b496b9992": {
+      "id": "0267f071980b496b9992",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 2.522353271180989,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "549da572709b44ae9201": {
+      "id": "549da572709b44ae9201",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 4.203922118634982,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "9e46ecd6f221417cb98d": {
+      "id": "9e46ecd6f221417cb98d",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "827ad4b898c34b03bf15": {
+      "id": "827ad4b898c34b03bf15",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3c70964cb9734df784a1": {
+      "id": "3c70964cb9734df784a1",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2bd9d767217c45db85e9": {
+      "id": "2bd9d767217c45db85e9",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "72ffe07fe4404d2ba5ed": {
+      "id": "72ffe07fe4404d2ba5ed",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f4db7717da4e43118f0d": {
+      "id": "f4db7717da4e43118f0d",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c9658153779541ac9cb1": {
+      "id": "c9658153779541ac9cb1",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.6,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "fd39d5fea81d427986c6": {
+      "id": "fd39d5fea81d427986c6",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 10.800614027790367,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "7f0a1acebf8b4f1db38b": {
+      "id": "7f0a1acebf8b4f1db38b",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.48036841667422,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "38ac5adeb83844409fc7": {
+      "id": "38ac5adeb83844409fc7",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 10.800614027790367,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "8073338005d14c5bb1a9": {
+      "id": "8073338005d14c5bb1a9",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.465663212510131,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "37fdf6a1845d48389906": {
+      "id": "37fdf6a1845d48389906",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.879397927506079,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "98a2ac298782488a8a47": {
+      "id": "98a2ac298782488a8a47",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.465663212510131,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ae881ff79b1e4a16bebe": {
+      "id": "ae881ff79b1e4a16bebe",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.595594721943208,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "460ce23242f641278297": {
+      "id": "460ce23242f641278297",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.957356833165925,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "659d6d1e9f574a7abf9b": {
+      "id": "659d6d1e9f574a7abf9b",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.595594721943208,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a95804f3367443c8a3fa": {
+      "id": "a95804f3367443c8a3fa",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.095322246002295,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "91aa6544f6cc4f9a802a": {
+      "id": "91aa6544f6cc4f9a802a",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.657193347601377,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a3474642ee18429aa160": {
+      "id": "a3474642ee18429aa160",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.095322246002295,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "84dcd35d79f9417fabcf": {
+      "id": "84dcd35d79f9417fabcf",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.277630105075177,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "7b8816ac1b0342b08508": {
+      "id": "7b8816ac1b0342b08508",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.766578063045106,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "eeef56620ebb4bffb3f5": {
+      "id": "eeef56620ebb4bffb3f5",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.277630105075177,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c910a2779cd74277a8aa": {
+      "id": "c910a2779cd74277a8aa",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 10.020862737499698,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f38120b45f494bddbfb6": {
+      "id": "f38120b45f494bddbfb6",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.012517642499819,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2df938de0f684aa4a00b": {
+      "id": "2df938de0f684aa4a00b",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 10.020862737499698,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "15fb9c4407e54b85be44": {
+      "id": "15fb9c4407e54b85be44",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.525981932177938,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "e6fbb4690d314dbb97a5": {
+      "id": "e6fbb4690d314dbb97a5",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 6.915589159306763,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "21bef3e29329488db760": {
+      "id": "21bef3e29329488db760",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.525981932177938,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "86084dcd9cd6407381cc": {
+      "id": "86084dcd9cd6407381cc",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2efa4d58cf2043b7b0a9": {
+      "id": "2efa4d58cf2043b7b0a9",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3b433d29db1c4876903c": {
+      "id": "3b433d29db1c4876903c",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a59fe9b12e5c4b7ab70e": {
+      "id": "a59fe9b12e5c4b7ab70e",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "83f45d6a431c4263b4b3": {
+      "id": "83f45d6a431c4263b4b3",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "99fb396a74cd4d889ed4": {
+      "id": "99fb396a74cd4d889ed4",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "8f6dc0265c924a4bad13": {
+      "id": "8f6dc0265c924a4bad13",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 0.8999999999999999,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "8b5a6c5b8c6643a88895": {
+      "id": "8b5a6c5b8c6643a88895",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 20.762255625024277,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "aed37ee3a1614c50a27e": {
+      "id": "aed37ee3a1614c50a27e",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 12.457353375014566,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "559ac0b00e1b4555b329": {
+      "id": "559ac0b00e1b4555b329",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 20.762255625024277,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f31cccaa86e9440cbfa9": {
+      "id": "f31cccaa86e9440cbfa9",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.95485048126954,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a02580c87f1747c19467": {
+      "id": "a02580c87f1747c19467",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 13.172910288761722,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "1c1e153b027e4e6584f1": {
+      "id": "1c1e153b027e4e6584f1",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.95485048126954,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "976316301bc94b098ef9": {
+      "id": "976316301bc94b098ef9",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 22.295432678033336,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "14dda3e7698743f09836": {
+      "id": "14dda3e7698743f09836",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 13.377259606820001,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ebd3ec89866f42d0a5bf": {
+      "id": "ebd3ec89866f42d0a5bf",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 22.295432678033336,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2fadc73cb695431a91bb": {
+      "id": "2fadc73cb695431a91bb",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.330621474432995,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a2d82c4081e248f4b8ff": {
+      "id": "a2d82c4081e248f4b8ff",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 12.798372884659797,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "85c285aca37a481087ee": {
+      "id": "85c285aca37a481087ee",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.330621474432995,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "cfd47c9b8dcf417dba25": {
+      "id": "cfd47c9b8dcf417dba25",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.682215202644986,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "4c0218ebc7734bdaa04b": {
+      "id": "4c0218ebc7734bdaa04b",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 13.009329121586992,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "b109f897248f409191d1": {
+      "id": "b109f897248f409191d1",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.682215202644986,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "043f70c803e04a408e56": {
+      "id": "043f70c803e04a408e56",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 19.258449565177997,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3f67b4c92a35462f96e9": {
+      "id": "3f67b4c92a35462f96e9",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 11.555069739106798,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "958fce27360f4477ba35": {
+      "id": "958fce27360f4477ba35",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 19.258449565177997,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c352227ab6a74bba947d": {
+      "id": "c352227ab6a74bba947d",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 22.0711794406289,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3a1891cd241545f68e36": {
+      "id": "3a1891cd241545f68e36",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 13.24270766437734,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f66895c7a9cc4b57897c": {
+      "id": "f66895c7a9cc4b57897c",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 22.0711794406289,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "6464e7a727564f4fbb12": {
+      "id": "6464e7a727564f4fbb12",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f09af687807e43c58361": {
+      "id": "f09af687807e43c58361",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "e66dd4cb6dcc4689a494": {
+      "id": "e66dd4cb6dcc4689a494",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a5a13eb5fe744a23a99e": {
+      "id": "a5a13eb5fe744a23a99e",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "377410f2910045859bba": {
+      "id": "377410f2910045859bba",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "90a32999cfa14492b4fc": {
+      "id": "90a32999cfa14492b4fc",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "8ada7dabdc504fc19a57": {
+      "id": "8ada7dabdc504fc19a57",
+      "title": "RX",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.2,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "input-number"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "e84ebfca93b24839909f": {
+      "id": "e84ebfca93b24839909f",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 33.77978694448403,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "5fb3fd8e81f646609503": {
+      "id": "5fb3fd8e81f646609503",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 20.267872166690417,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "7981971b78ec4f37a3ef": {
+      "id": "7981971b78ec4f37a3ef",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 33.77978694448403,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2f4b206d52294fa99663": {
+      "id": "2f4b206d52294fa99663",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.64994152503186,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ce30f0d02e654cea9943": {
+      "id": "ce30f0d02e654cea9943",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.389964915019117,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "4bed9728c6b94895b7df": {
+      "id": "4bed9728c6b94895b7df",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.64994152503186,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "fdbe298400854d49a872": {
+      "id": "fdbe298400854d49a872",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 36.278297697535834,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "8368df5afbaa45dd8a55": {
+      "id": "8368df5afbaa45dd8a55",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.7669786185215,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "0021a313491f4ae4ba70": {
+      "id": "0021a313491f4ae4ba70",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 36.278297697535834,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "85372364f0fc4e9f9ac2": {
+      "id": "85372364f0fc4e9f9ac2",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 34.70601277315009,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "c03c267aa47c49529dbb": {
+      "id": "c03c267aa47c49529dbb",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 20.823607663890055,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "7ddc28ed92a34f55a795": {
+      "id": "7ddc28ed92a34f55a795",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 34.70601277315009,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ed9e08d0a7e84196980a": {
+      "id": "ed9e08d0a7e84196980a",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.27898033023631,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "992b6fd7135d470e9971": {
+      "id": "992b6fd7135d470e9971",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.167388198141783,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "4bc662ce2f2f467d9d93": {
+      "id": "4bc662ce2f2f467d9d93",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.27898033023631,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "df71540546cf4396a23a": {
+      "id": "df71540546cf4396a23a",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 31.329140032141904,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "a94269bf08de430fad19": {
+      "id": "a94269bf08de430fad19",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 18.797484019285143,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "9fbd70786c694af09e29": {
+      "id": "9fbd70786c694af09e29",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 31.329140032141904,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "e58c0a5a7c4f4f2991e9": {
+      "id": "e58c0a5a7c4f4f2991e9",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.83951464398785,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "d453821c61e143c5a9cc": {
+      "id": "d453821c61e143c5a9cc",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 21.503708786392707,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "3fd573a50c8f4920918d": {
+      "id": "3fd573a50c8f4920918d",
+      "title": "RZ",
+      "type": "params",
+      "params": [
+        {
+          "key": "lambda",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 35.83951464398785,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-e"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "bd563b54713a43dba51d": {
+      "id": "bd563b54713a43dba51d",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ba98afce783f4679a527": {
+      "id": "ba98afce783f4679a527",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "04a6c369516d43c6b83b": {
+      "id": "04a6c369516d43c6b83b",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ba039fdbf5784af69e60": {
+      "id": "ba039fdbf5784af69e60",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "71b2395976164600b5c1": {
+      "id": "71b2395976164600b5c1",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "6bc55911f1c046b68557": {
+      "id": "6bc55911f1c046b68557",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "84625a0494bf4ffc835f": {
+      "id": "84625a0494bf4ffc835f",
+      "title": "RY",
+      "type": "params",
+      "params": [
+        {
+          "key": "theta",
+          "title": "Угол поворота в радианах",
+          "manipulation": null,
+          "value": [
+            {
+              "title": "Угол поворота",
+              "key": "angle1",
+              "types": [
+                {
+                  "input": "input",
+                  "type": "number",
+                  "key": "input-number",
+                  "title": "Угол поворота в радианах",
+                  "data": 1.5,
+                  "step": 0.01,
+                  "decimalDigits": 6
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-pi",
+                  "title": "Число Пи (π)",
+                  "data": "pi"
+                },
+                {
+                  "input": "const",
+                  "type": "string",
+                  "key": "const-string-e",
+                  "title": "Число е",
+                  "data": "e"
+                }
+              ],
+              "data": "const-string-pi"
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "9b8ac8c123204ea88611": {
+      "id": "9b8ac8c123204ea88611",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "ee0a4065b70544dbbefc": {
+      "id": "ee0a4065b70544dbbefc",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "09f1065b45ed4cb1aa29": {
+      "id": "09f1065b45ed4cb1aa29",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "f92121db33484296b279": {
+      "id": "f92121db33484296b279",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "04608f996f6743058ae8": {
+      "id": "04608f996f6743058ae8",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "17800e73972648389bbf": {
+      "id": "17800e73972648389bbf",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    },
+    "2c8ac316e9fa4cb09f93": {
+      "id": "2c8ac316e9fa4cb09f93",
+      "title": "MEASUREMENT",
+      "type": "auxiliary",
+      "params": null,
+      "error": null,
+      "body": null,
+      "idGate": null
+    }
+  },
+  "actualHistoryMap": [
+    [
+      "a076358926c940d59b30",
+      "d1ab1c2f2f2a42d8b314",
+      "60d7dc7cfe1d4635b49e",
+      "cdf7a8b1a6b04d668eae",
+      "9e46ecd6f221417cb98d",
+      "fd39d5fea81d427986c6",
+      "7f0a1acebf8b4f1db38b",
+      "38ac5adeb83844409fc7",
+      "86084dcd9cd6407381cc",
+      "8b5a6c5b8c6643a88895",
+      "aed37ee3a1614c50a27e",
+      "559ac0b00e1b4555b329",
+      "6464e7a727564f4fbb12",
+      "e84ebfca93b24839909f",
+      "5fb3fd8e81f646609503",
+      "7981971b78ec4f37a3ef",
+      "bd563b54713a43dba51d",
+      "9b8ac8c123204ea88611"
+    ],
+    [
+      "6cc1970accea4d568dfd",
+      "5212bd4f416147f8a8b4",
+      "38800c94215140d6b2c4",
+      "e814f3eb785447a493be",
+      "827ad4b898c34b03bf15",
+      "8073338005d14c5bb1a9",
+      "37fdf6a1845d48389906",
+      "98a2ac298782488a8a47",
+      "2efa4d58cf2043b7b0a9",
+      "f31cccaa86e9440cbfa9",
+      "a02580c87f1747c19467",
+      "1c1e153b027e4e6584f1",
+      "f09af687807e43c58361",
+      "2f4b206d52294fa99663",
+      "ce30f0d02e654cea9943",
+      "4bed9728c6b94895b7df",
+      "ba98afce783f4679a527",
+      "ee0a4065b70544dbbefc"
+    ],
+    [
+      "b5cba10d9ee24f4ca112",
+      "996c83ea37ba426fa13d",
+      "043a9a7adf0a4d2aa33e",
+      "32d1d9488b1d4104a392",
+      "3c70964cb9734df784a1",
+      "ae881ff79b1e4a16bebe",
+      "460ce23242f641278297",
+      "659d6d1e9f574a7abf9b",
+      "3b433d29db1c4876903c",
+      "976316301bc94b098ef9",
+      "14dda3e7698743f09836",
+      "ebd3ec89866f42d0a5bf",
+      "e66dd4cb6dcc4689a494",
+      "fdbe298400854d49a872",
+      "8368df5afbaa45dd8a55",
+      "0021a313491f4ae4ba70",
+      "04a6c369516d43c6b83b",
+      "09f1065b45ed4cb1aa29"
+    ],
+    [
+      "aa9c7167eb5b478b9ec9",
+      "2e12d7fbe9d24101baf9",
+      "ee78a7cc6df84ed79416",
+      "f5321b59c99e4e3786fb",
+      "2bd9d767217c45db85e9",
+      "a95804f3367443c8a3fa",
+      "91aa6544f6cc4f9a802a",
+      "a3474642ee18429aa160",
+      "a59fe9b12e5c4b7ab70e",
+      "2fadc73cb695431a91bb",
+      "a2d82c4081e248f4b8ff",
+      "85c285aca37a481087ee",
+      "a5a13eb5fe744a23a99e",
+      "85372364f0fc4e9f9ac2",
+      "c03c267aa47c49529dbb",
+      "7ddc28ed92a34f55a795",
+      "ba039fdbf5784af69e60",
+      "f92121db33484296b279"
+    ],
+    [
+      "3890e2b06dc244488f1b",
+      "dcb4ae97da9b43ca970c",
+      "7f2994c6aaf94c6eaac8",
+      "c5ff597e01fb4f0a9b2a",
+      "72ffe07fe4404d2ba5ed",
+      "84dcd35d79f9417fabcf",
+      "7b8816ac1b0342b08508",
+      "eeef56620ebb4bffb3f5",
+      "83f45d6a431c4263b4b3",
+      "cfd47c9b8dcf417dba25",
+      "4c0218ebc7734bdaa04b",
+      "b109f897248f409191d1",
+      "377410f2910045859bba",
+      "ed9e08d0a7e84196980a",
+      "992b6fd7135d470e9971",
+      "4bc662ce2f2f467d9d93",
+      "71b2395976164600b5c1",
+      "04608f996f6743058ae8"
+    ],
+    [
+      "4187bc83128143eb8bec",
+      "16a6bbb44aac4e72bd42",
+      "9d39a358cfd041d5b377",
+      "da380f66057242948f21",
+      "f4db7717da4e43118f0d",
+      "c910a2779cd74277a8aa",
+      "f38120b45f494bddbfb6",
+      "2df938de0f684aa4a00b",
+      "99fb396a74cd4d889ed4",
+      "043f70c803e04a408e56",
+      "3f67b4c92a35462f96e9",
+      "958fce27360f4477ba35",
+      "90a32999cfa14492b4fc",
+      "df71540546cf4396a23a",
+      "a94269bf08de430fad19",
+      "9fbd70786c694af09e29",
+      "6bc55911f1c046b68557",
+      "17800e73972648389bbf"
+    ],
+    [
+      "c6360c5515454239a325",
+      "0c3dfcde06be41bfaf00",
+      "0267f071980b496b9992",
+      "549da572709b44ae9201",
+      "c9658153779541ac9cb1",
+      "15fb9c4407e54b85be44",
+      "e6fbb4690d314dbb97a5",
+      "21bef3e29329488db760",
+      "8f6dc0265c924a4bad13",
+      "c352227ab6a74bba947d",
+      "3a1891cd241545f68e36",
+      "f66895c7a9cc4b57897c",
+      "8ada7dabdc504fc19a57",
+      "e58c0a5a7c4f4f2991e9",
+      "d453821c61e143c5a9cc",
+      "3fd573a50c8f4920918d",
+      "84625a0494bf4ffc835f",
+      "2c8ac316e9fa4cb09f93"
+    ]
+  ],
+  "launch": 1024
+}
