@@ -53,7 +53,6 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 0px;
 }
 
 /* Плавная прокрутка по якорям */
