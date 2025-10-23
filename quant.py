@@ -447,7 +447,7 @@ class ImprovedQuantumTrafficOptimizer:
         for qubit in range(self.total_qubits):
             qc.ry(2 * beta, qubit)
 
-def save_traffic_circuits_from_files(graph_file, routes_file, output_dir="api_circuits", process_all_graphs=False):
+def save_traffic_circuits_from_files(graph_file, routes_file, output_dir="input", process_all_graphs=False):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -566,8 +566,7 @@ if __name__ == "__main__":
     test_quantum_nondeterminism()
 
     save_traffic_circuits_from_files(
-        "C:\\Users\\oppoe\\Desktop\\mini_G_set (2).txt",
-        "C:\\Users\\oppoe\\Desktop\\mini_routes (2).txt",
-        process_all_graphs=True,
-
+        "G_set1.txt",
+        "routes1.txt",
+        process_all_graphs=False,
     )

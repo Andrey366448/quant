@@ -6,7 +6,7 @@ const path = require('path');
 class FullyOptimizedQuantumCircuitProcessor {
     constructor() {
         this.inputDir = path.join(__dirname, 'input');
-        this.resultsBaseDir = path.join(__dirname, 'quantum_results');
+        this.resultsBaseDir = path.join(__dirname, 'results');
         this.isProcessing = false;
         this.processedFiles = new Set();
         this.loadProcessedFiles();
