@@ -10,7 +10,6 @@ from uuid import uuid4
 from starlette.background import BackgroundTask
 import os
 
-import quantum_inspired
 import visualization_graph
 
 app = FastAPI()
@@ -88,7 +87,7 @@ async def quant_inspired():
 
 @app.post("/quant_full/")
 async def quant_full():
-    quantum_inspired.main()
+
     return {"message": "Квантовый алгоритм завершил работу"}
 
 # ==== визуализации ====

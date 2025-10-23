@@ -6,7 +6,6 @@ import ast
 import math
 import os
 import json
-from matplotlib.animation import FuncAnimation
 from collections import defaultdict
 import heapq
 
@@ -23,24 +22,19 @@ class QuantumInspiredTrafficOptimizer:
         self.n_nodes = len(graph)
         self.n_cars = len(routes)
 
-        # Автоматическая настройка параметров
         self._auto_tune_parameters()
 
-        # Эффективные структуры данных
         self.adjacency_list = self._build_adjacency_list()
         self.path_cache = {}
 
-        # Подсчет ребер для декомпозиции
         self._check_decomposition_needed()
 
     def _auto_tune_parameters(self):
         """Автоматическая настройка гиперпараметров под размер задачи."""
         problem_size = self.n_cars * self.n_nodes
 
-        # Параметры QUBO (автонастройка под размер)
         self.weight_time = 1.0
 
-        # Малый штраф за перегрузку для минимального влияния на время
         if problem_size < 1000:
             self.weight_congestion = 0.5
         elif problem_size < 5000:
@@ -48,7 +42,6 @@ class QuantumInspiredTrafficOptimizer:
         else:
             self.weight_congestion = 0.1
 
-        # Квантовые параметры (для теоретического обоснования)
         self.initial_temp = 100.0
         self.cooling_rate = 0.95
         self.tunneling_prob = 0.15
@@ -135,7 +128,6 @@ class QuantumInspiredTrafficOptimizer:
                     edge = (min(u, v), max(u, v))
                     edge_usage[edge] += 1
 
-        # Квадратичный штраф за перегрузку
         congestion_penalty = sum(count * (count - 1) for count in edge_usage.values())
 
         return total_time + self.weight_congestion * congestion_penalty
@@ -203,11 +195,9 @@ class TrafficVisualizer:
         G = nx.Graph()
         n = len(matrix)
 
-        # Добавляем узлы
         for i in range(n):
             G.add_node(i)
 
-        # Добавляем ребра с весами
         for i in range(n):
             for j in range(i + 1, n):
                 if not math.isinf(matrix[i][j]) and matrix[i][j] > 0:
@@ -238,33 +228,26 @@ class TrafficVisualizer:
         """
         Статическая визуализация графа с цветовой индикацией загруженности ребер
         """
-        # Создаем граф
         G = self.create_graph_from_matrix(graph_matrix)
 
-        # Подсчитываем трафик
         edge_traffic = self.calculate_edge_traffic(routes)
 
-        # Устанавливаем атрибут трафика для ребер
         for edge in G.edges():
             edge_key = tuple(sorted(edge))
             traffic = edge_traffic.get(edge_key, 0)
             G.edges[edge]['traffic'] = traffic
 
-        # Создаем график
-        fig, ax = plt.subplots(figsize=(10, 8))  # Уменьшил размер, так как нет цветовой шкалы
+        fig, ax = plt.subplots(figsize=(10, 8))
         pos = self.get_node_positions(G)
 
-        # Получаем значения трафика для цветовой карты
         traffic_values = [G.edges[edge]['traffic'] for edge in G.edges()]
         max_traffic = max(traffic_values) if traffic_values else 1
 
-        # Создаем цветовую карту от зеленого к красному
         if max_traffic > 0:
             edge_colors = [traffic / max_traffic for traffic in traffic_values]
         else:
             edge_colors = [0] * len(traffic_values)
 
-        # Рисуем ребра с цветом в зависимости от трафика
         nx.draw_networkx_edges(
             G, pos,
             edge_color=edge_colors,
@@ -276,7 +259,6 @@ class TrafficVisualizer:
             ax=ax
         )
 
-        # Рисуем узлы
         nx.draw_networkx_nodes(
             G, pos,
             node_color='lightblue',
@@ -285,10 +267,8 @@ class TrafficVisualizer:
             ax=ax
         )
 
-        # Подписываем узлы
         nx.draw_networkx_labels(G, pos, font_size=10, font_weight='bold', ax=ax)
 
-        # Добавляем заголовок с информацией о времени
         ax.set_title(f'Граф дорожного движения {graph_index}\n'
                      f'Загруженность ребер (всего машин: {len(routes)})\n'
                      f'Общее время движения: {total_time:.2f}',
@@ -297,10 +277,8 @@ class TrafficVisualizer:
         ax.axis('off')
         plt.tight_layout()
 
-        # Создаем папку если не существует
         os.makedirs(save_path, exist_ok=True)
 
-        # Сохраняем изображение
         filename = f'{save_path}/graph_{graph_index}_traffic.png'
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         plt.close()
@@ -330,19 +308,16 @@ class TrafficVisualizer:
                     print(f"Ошибка парсинга графа {graph_index}")
                     continue
 
-                # Используем QuantumInspiredTrafficOptimizer для расчета
                 print(f"Оптимизация графа {graph_index} с {len(routes_start_end)} маршрутами...")
                 optimizer = QuantumInspiredTrafficOptimizer(graph_matrix, routes_start_end)
                 optimized_routes, total_time = optimizer.optimize_routes()
 
                 print(f"Граф {graph_index}: {len(optimized_routes)} маршрутов, время: {total_time:.2f}")
 
-                # Статическая визуализация
                 static_file = self.visualize_static_traffic(
                     graph_matrix, optimized_routes, graph_index, total_time)
                 static_files.append(static_file)
 
-                # Анимированная визуализация (опционально)
                 if create_animations and len(optimized_routes) <= 20:
                     try:
                         animation_file = self.visualize_animated_traffic(
@@ -370,7 +345,6 @@ def main():
     print("Используется QuantumInspiredTrafficOptimizer")
     print("=" * 50)
 
-    # Визуализируем все графы
     static_files, animation_files = visualizer.visualize_all_graphs(
         data_file='uploads/data.csv',
         create_animations=True
