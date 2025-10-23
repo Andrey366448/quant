@@ -1,35 +1,20 @@
-import math
-import numpy as np
+import matplotlib.pyplot as plt
+import networkx as nx
 import pandas as pd
+import numpy as np
 import ast
+import math
+import os
 import json
+from matplotlib.animation import FuncAnimation
 from collections import defaultdict
 import heapq
-import visual_qi
+
 
 class QuantumInspiredTrafficOptimizer:
     """
     Квантово-вдохновленный оптимизатор дорожного трафика.
     Реализует сведение к QUBO/Изинг с автоматической декомпозицией.
-
-    QUBO формулировка:
-    H = A·Σ_{k,e} w_e·x_{k,e} + B·Σ_e (Σ_k x_{k,e})²
-
-    где:
-    - x_{k,e} ∈ {0,1} - бинарная переменная (автомобиль k использует ребро e)
-    - w_e - вес ребра e (время проезда)
-    - A - коэффициент минимизации времени
-    - B - коэффициент штрафа за перегрузку
-
-    Преобразование в модель Изинга:
-    x_i = (1 + s_i)/2, где s_i ∈ {-1, +1}
-
-    Результат:
-    H_Ising = Σ_i h_i·s_i + Σ_{i<j} J_{ij}·s_i·s_j
-
-    где:
-    - h_i - локальные поля
-    - J_{ij} - спин-спиновые взаимодействия
     """
 
     def __init__(self, graph, routes):
@@ -37,11 +22,6 @@ class QuantumInspiredTrafficOptimizer:
         self.routes = routes
         self.n_nodes = len(graph)
         self.n_cars = len(routes)
-
-        # QUBO/Изинг структуры (концептуальное представление)
-        self.qubo_matrix = {}
-        self.ising_h = {}
-        self.ising_J = {}
 
         # Автоматическая настройка параметров
         self._auto_tune_parameters()
@@ -54,15 +34,7 @@ class QuantumInspiredTrafficOptimizer:
         self._check_decomposition_needed()
 
     def _auto_tune_parameters(self):
-        """
-        Автоматическая настройка гиперпараметров под размер задачи.
-
-        Квантово-вдохновленные параметры:
-        - Начальная температура (simulated annealing)
-        - Скорость охлаждения (cooling schedule)
-        - Вероятность туннелирования (quantum tunneling)
-        - Веса QUBO формулировки
-        """
+        """Автоматическая настройка гиперпараметров под размер задачи."""
         problem_size = self.n_cars * self.n_nodes
 
         # Параметры QUBO (автонастройка под размер)
@@ -77,16 +49,13 @@ class QuantumInspiredTrafficOptimizer:
             self.weight_congestion = 0.1
 
         # Квантовые параметры (для теоретического обоснования)
-        self.initial_temp = 100.0  # Температура симулированного отжига
-        self.cooling_rate = 0.95  # Геометрическая схема охлаждения
-        self.tunneling_prob = 0.15  # Вероятность квантового туннелирования
-        self.final_temp = 0.1  # Финальная температура
+        self.initial_temp = 100.0
+        self.cooling_rate = 0.95
+        self.tunneling_prob = 0.15
+        self.final_temp = 0.1
 
     def _build_adjacency_list(self):
-        """
-        Построение списка смежности для эффективного поиска.
-        Сложность: O(|V|²) построение, O(degree(v)) доступ
-        """
+        """Построение списка смежности для эффективного поиска."""
         adj_list = [[] for _ in range(self.n_nodes)]
         for i in range(self.n_nodes):
             for j in range(self.n_nodes):
@@ -95,13 +64,7 @@ class QuantumInspiredTrafficOptimizer:
         return adj_list
 
     def _check_decomposition_needed(self):
-        """
-        Проверка необходимости декомпозиции задачи.
-
-        Критерий: размер матрицы Изинга ~300 спинов
-
-        Если n_vars = n_cars × n_edges > 300, требуется декомпозиция.
-        """
+        """Проверка необходимости декомпозиции задачи."""
         # Подсчет ребер
         n_edges = sum(1 for i in range(self.n_nodes)
                       for j in range(self.n_nodes)
@@ -112,51 +75,11 @@ class QuantumInspiredTrafficOptimizer:
         self.problem_size = problem_size
 
         if self.needs_decomposition:
-            # Автоматическое разбиение на подзадачи
             self.cars_per_subproblem = max(1, 300 // n_edges)
         else:
             self.cars_per_subproblem = self.n_cars
 
-    def _build_qubo_formulation(self):
-        """
-        Концептуальное сведение задачи к QUBO формулировке.
-
-        Переменные:
-        x_{k,e} ∈ {0,1} для всех k ∈ {1,...,n_cars}, e ∈ E
-
-        Целевая функция:
-        H = A·Σ_{k,e} w_e·x_{k,e} + B·Σ_e (Σ_k x_{k,e})²
-
-        Компоненты:
-        1. Линейный член A·Σ_{k,e} w_e·x_{k,e} - минимизация времени
-        2. Квадратичный член B·Σ_e (Σ_k x_{k,e})² - штраф за перегрузку
-
-        Матрица Q строится как:
-        - Q_{ii} = A·w_e + B (диагональные элементы)
-        - Q_{ij} = 2B для взаимодействий на одном ребре (недиагональные)
-
-        Преобразование QUBO → Изинг:
-        Замена x_i = (1 + s_i)/2 приводит к:
-
-        H_Ising = Σ_i h_i·s_i + Σ_{i<j} J_{ij}·s_i·s_j + const
-
-        где:
-        h_i = Q_{ii}/2 + Σ_j Q_{ij}/4 (локальные поля)
-        J_{ij} = Q_{ij}/4 (взаимодействия)
-        """
-        # Концептуальное сведение без явного построения матрицы
-        # для сохранения эффективности по памяти O(1) вместо O(n²)
-        pass
-
     def _find_shortest_path(self, start, end):
-        """
-        Алгоритм Дейкстры с кэшированием.
-
-        Сложность: O((|E| + |V|) log |V|) с бинарной кучей
-
-        Кэш реализует концепцию суперпозиции состояний:
-        система "помнит" все найденные пути.
-        """
         if start == end:
             return [start], 0
 
@@ -200,18 +123,7 @@ class QuantumInspiredTrafficOptimizer:
         return result
 
     def _calculate_energy(self, solution):
-        """
-        Вычисление энергии решения согласно QUBO формулировке.
-
-        E = A·Σ_{k,e} w_e·x_{k,e} + B·Σ_e (Σ_k x_{k,e})²
-
-        Компоненты:
-        1. Линейный член: суммарное время всех путей
-        2. Квадратичный член: штраф за одновременное использование ребер
-
-        Штраф n*(n-1) для n автомобилей на одном ребре
-        соответствует квадратичному члену (Σ_k x_{k,e})² в QUBO.
-        """
+        """Вычисление энергии решения согласно QUBO формулировке."""
         total_time = 0.0
         edge_usage = defaultdict(int)
 
@@ -229,33 +141,12 @@ class QuantumInspiredTrafficOptimizer:
         return total_time + self.weight_congestion * congestion_penalty
 
     def optimize_routes(self):
-        """
-        Квантово-вдохновленная оптимизация маршрутов.
-
-        Этапы:
-        1. Сведение задачи к QUBO/Изинг формулировке
-        2. Проверка необходимости декомпозиции (критерий ~300 спинов)
-        3. Применение эффективного алгоритма поиска
-        4. Вычисление энергии согласно QUBO
-
-        Квантовые концепции:
-        - Кэширование путей = суперпозиция состояний
-        - Дейкстра = детерминистический коллапс волновой функции
-        - Автонастройка = адиабатическая эволюция параметров
-
-        Для эффективности используется прямое решение через Дейкстру,
-        что соответствует квантовому алгоритму поиска в основном состоянии.
-        """
-        # Шаг 1: Концептуальное построение QUBO/Изинг
-        self._build_qubo_formulation()
-
-        # Шаг 2: Решение задачи (с учетом декомпозиции)
+        """Квантово-вдохновленная оптимизация маршрутов."""
         solution = []
         for start, end in self.routes:
             path, _ = self._find_shortest_path(start, end)
             solution.append(path)
 
-        # Шаг 3: Вычисление энергии согласно QUBO формулировке
         energy = self._calculate_energy(solution)
 
         return solution, energy
@@ -298,66 +189,199 @@ def parse_routes(routes_str):
         return None
 
 
-def main():
-    """Основная функция обработки данных"""
-    try:
-        # Загрузка из папки uploads
-        df = pd.read_csv('uploads/data.csv')
-        print(f"Файл data.csv загружен корректно ({len(df)} графов)")
+class TrafficVisualizer:
+    """
+    Визуализатор графов дорожного движения с использованием QuantumInspiredTrafficOptimizer
+    """
 
-        if len(df) == 0:
-            print("Ошибка: файл пуст")
-            return
+    def __init__(self):
+        self.colors = plt.cm.Set3(np.linspace(0, 1, 12))
+        self.car_markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h']
 
-        all_submission = []
-        total_time_data = []
+    def create_graph_from_matrix(self, matrix):
+        """Создание графа из матрицы смежности"""
+        G = nx.Graph()
+        n = len(matrix)
 
-        for idx, row in df.iterrows():
-            try:
+        # Добавляем узлы
+        for i in range(n):
+            G.add_node(i)
+
+        # Добавляем ребра с весами
+        for i in range(n):
+            for j in range(i + 1, n):
+                if not math.isinf(matrix[i][j]) and matrix[i][j] > 0:
+                    G.add_edge(i, j, weight=matrix[i][j], traffic=0)
+
+        return G
+
+    def calculate_edge_traffic(self, routes):
+        """Подсчет трафика на каждом ребре"""
+        edge_traffic = {}
+
+        for route in routes:
+            for i in range(len(route) - 1):
+                edge = tuple(sorted([route[i], route[i + 1]]))
+                edge_traffic[edge] = edge_traffic.get(edge, 0) + 1
+
+        return edge_traffic
+
+    def get_node_positions(self, G):
+        """Генерация позиций узлов для визуализации"""
+        try:
+            return nx.spring_layout(G, k=3, iterations=50)
+        except:
+            return nx.circular_layout(G)
+
+    def visualize_static_traffic(self, graph_matrix, routes, graph_index, total_time,
+                                 save_path='traffic_visualizations'):
+        """
+        Статическая визуализация графа с цветовой индикацией загруженности ребер
+        """
+        # Создаем граф
+        G = self.create_graph_from_matrix(graph_matrix)
+
+        # Подсчитываем трафик
+        edge_traffic = self.calculate_edge_traffic(routes)
+
+        # Устанавливаем атрибут трафика для ребер
+        for edge in G.edges():
+            edge_key = tuple(sorted(edge))
+            traffic = edge_traffic.get(edge_key, 0)
+            G.edges[edge]['traffic'] = traffic
+
+        # Создаем график
+        fig, ax = plt.subplots(figsize=(10, 8))  # Уменьшил размер, так как нет цветовой шкалы
+        pos = self.get_node_positions(G)
+
+        # Получаем значения трафика для цветовой карты
+        traffic_values = [G.edges[edge]['traffic'] for edge in G.edges()]
+        max_traffic = max(traffic_values) if traffic_values else 1
+
+        # Создаем цветовую карту от зеленого к красному
+        if max_traffic > 0:
+            edge_colors = [traffic / max_traffic for traffic in traffic_values]
+        else:
+            edge_colors = [0] * len(traffic_values)
+
+        # Рисуем ребра с цветом в зависимости от трафика
+        nx.draw_networkx_edges(
+            G, pos,
+            edge_color=edge_colors,
+            edge_cmap=plt.cm.RdYlGn_r,
+            edge_vmin=0,
+            edge_vmax=1,
+            width=3,
+            alpha=0.7,
+            ax=ax
+        )
+
+        # Рисуем узлы
+        nx.draw_networkx_nodes(
+            G, pos,
+            node_color='lightblue',
+            node_size=500,
+            alpha=0.9,
+            ax=ax
+        )
+
+        # Подписываем узлы
+        nx.draw_networkx_labels(G, pos, font_size=10, font_weight='bold', ax=ax)
+
+        # Добавляем заголовок с информацией о времени
+        ax.set_title(f'Граф дорожного движения {graph_index}\n'
+                     f'Загруженность ребер (всего машин: {len(routes)})\n'
+                     f'Общее время движения: {total_time:.2f}',
+                     fontsize=14, fontweight='bold')
+
+        ax.axis('off')
+        plt.tight_layout()
+
+        # Создаем папку если не существует
+        os.makedirs(save_path, exist_ok=True)
+
+        # Сохраняем изображение
+        filename = f'{save_path}/graph_{graph_index}_traffic.png'
+        plt.savefig(filename, dpi=300, bbox_inches='tight')
+        plt.close()
+
+        print(f'Сохранено: {filename}')
+
+        return filename
+
+    def visualize_all_graphs(self, data_file='uploads/data.csv', create_animations=True):
+        """
+        Визуализация всех графов из data.csv с использованием QuantumInspiredTrafficOptimizer
+        """
+        try:
+            # Загружаем данные
+            df = pd.read_csv(data_file)
+            print(f"Загружено {len(df)} графов из {data_file}")
+
+            static_files = []
+            animation_files = []
+
+            for idx, row in df.iterrows():
                 graph_index = row['graph_index']
                 graph_matrix = parse_matrix(row['graph_matrix'])
-                routes = parse_routes(row['routes_start_end'])
+                routes_start_end = parse_routes(row['routes_start_end'])
 
-                if graph_matrix is None or routes is None:
+                if graph_matrix is None or routes_start_end is None:
+                    print(f"Ошибка парсинга графа {graph_index}")
                     continue
 
-                optimizer = QuantumInspiredTrafficOptimizer(graph_matrix, routes)
-                optimized_routes, total_energy = optimizer.optimize_routes()
+                # Используем QuantumInspiredTrafficOptimizer для расчета
+                print(f"Оптимизация графа {graph_index} с {len(routes_start_end)} маршрутами...")
+                optimizer = QuantumInspiredTrafficOptimizer(graph_matrix, routes_start_end)
+                optimized_routes, total_time = optimizer.optimize_routes()
 
-                total_time_data.append({
-                    'graph_index': graph_index,
-                    'total_time': total_energy
-                })
+                print(f"Граф {graph_index}: {len(optimized_routes)} маршрутов, время: {total_time:.2f}")
 
-                for driver_idx, route in enumerate(optimized_routes):
-                    all_submission.append({
-                        'graph_index': graph_index,
-                        'driver_index': driver_idx,
-                        'route': str(route)
-                    })
+                # Статическая визуализация
+                static_file = self.visualize_static_traffic(
+                    graph_matrix, optimized_routes, graph_index, total_time)
+                static_files.append(static_file)
 
-            except:
-                continue
+                # Анимированная визуализация (опционально)
+                if create_animations and len(optimized_routes) <= 20:
+                    try:
+                        animation_file = self.visualize_animated_traffic(
+                            graph_matrix, optimized_routes, graph_index, total_time)
+                        animation_files.append(animation_file)
+                    except Exception as e:
+                        print(f"Ошибка создания анимации для графа {graph_index}: {e}")
 
-        if all_submission:
-            submission_df = pd.DataFrame(all_submission)
-            submission_df.to_csv('submission.csv', index=False)
+            print(f"\n=== РЕЗУЛЬТАТЫ ВИЗУАЛИЗАЦИИ ===")
+            print(f"Создано изображений: {len(static_files)}")
 
-            total_df = pd.DataFrame(total_time_data)
-            overall = total_df['total_time'].sum()
-            total_row = pd.DataFrame([{'graph_index': 'Total', 'total_time': overall}])
-            total_df = pd.concat([total_df, total_row], ignore_index=True)
-            total_df.to_csv('total_time.csv', index=False)
+            return static_files, animation_files
 
-            print("Данные сохранены в файлах: submission.csv, total_time.csv")
-        else:
-            print("Ошибка: нет данных для сохранения")
+        except Exception as e:
+            print(f"Ошибка при визуализации: {e}")
+            return [], []
 
-    except Exception as e:
-        print(f"Ошибка: {e}")
 
-    visual_qi.visualize_graph_from_submissions()
+
+def main():
+    """Основная функция для запуска визуализации"""
+    visualizer = TrafficVisualizer()
+
+    print("Запуск визуализации графов дорожного движения...")
+    print("Используется QuantumInspiredTrafficOptimizer")
+    print("=" * 50)
+
+    # Визуализируем все графы
+    static_files, animation_files = visualizer.visualize_all_graphs(
+        data_file='uploads/data.csv',
+        create_animations=True
+    )
+
+    print("\nВизуализация завершена!")
+    print(f"Статические изображения сохранены в папке: traffic_visualizations/")
+
 
 
 if __name__ == "__main__":
+
     main()
+
