@@ -4,6 +4,13 @@ import math
 from collections import defaultdict
 import os
 import glob
+import time
+import traceback
+
+
+CHECK_INTERVAL = 5  # СЕКУНД
+FORCE_REPROCESS = False
+
 
 class BinaryQAOAPostProcessor:
     """Постобработка результатов QAOA с бинарным кодированием"""
@@ -19,12 +26,10 @@ class BinaryQAOAPostProcessor:
         if len(bitstring) != self.n_qubits_per_node:
             raise ValueError(f"Длина битовой строки {len(bitstring)} не совпадает с n_qubits_per_node {self.n_qubits_per_node}")
         
-        # Преобразуем бинарную строку в целое число
         node_id = int(bitstring, 2)
         
-        # Проверяем, что номер вершины в допустимом диапазоне
         if node_id >= self.n_nodes:
-            node_id = node_id % self.n_nodes  # Циклическое отображение если вышли за границы
+            node_id = node_id % self.n_nodes
             
         return node_id
     
@@ -37,8 +42,7 @@ class BinaryQAOAPostProcessor:
             return marginals
             
         for bitstring, cnt in counts.items():
-            # Преобразуем битовую строку в массив битов
-            bits = [int(bit) for bit in bitstring[::-1]]  # младший бит сначала
+            bits = [int(bit) for bit in bitstring[::-1]]
             
             for i in range(min(len(bits), n_qubits)):
                 marginals[i] += cnt * bits[i]
@@ -50,10 +54,8 @@ class BinaryQAOAPostProcessor:
         if not counts:
             return start_node, 0.0
             
-        # Вычисляем маргинальные вероятности
         marginals = self.compute_marginals_from_counts(counts, self.total_qubits)
         
-        # Находим наиболее вероятную битовую строку
         best_bitstring = None
         max_count = -1
         
@@ -65,18 +67,15 @@ class BinaryQAOAPostProcessor:
         if best_bitstring is None:
             return start_node, 0.0
             
-        # Преобразуем в номер вершины
         selected_node = self.binary_to_node(best_bitstring)
         
-        # Вычисляем стоимость перехода (используем граф для вычисления реальной стоимости)
         if start_node < self.n_nodes and selected_node < self.n_nodes:
             if self.J[start_node, selected_node] != np.inf:
                 cost = abs(self.J[start_node, selected_node])
-                # Учитываем трафик
                 traffic_penalty = current_traffic[start_node, selected_node] * 0.1
                 total_cost = cost + traffic_penalty
             else:
-                total_cost = 1000  # Большой штраф за недостижимость
+                total_cost = 1000
         else:
             total_cost = 1000
             
@@ -90,7 +89,6 @@ class BinaryQAOAPostProcessor:
         
         for car_idx, (start, end) in enumerate(routes):
             if car_idx >= len(counts_list):
-                # Если нет результатов для этой машины, используем прямой путь
                 path = [start, end]
                 paths.append(path)
                 total_costs.append(0.0)
@@ -100,7 +98,6 @@ class BinaryQAOAPostProcessor:
             path = [start]
             path_cost = 0.0
             
-            # Строим путь шаг за шагом
             for step in range(max_path_length):
                 if current_node == end:
                     break
@@ -108,7 +105,6 @@ class BinaryQAOAPostProcessor:
                 counts = counts_list[car_idx]
                 next_node, step_cost = self.find_best_path_binary(counts, current_node, end, current_traffic)
                 
-                # Проверяем допустимость перехода
                 if (next_node not in path and 
                     current_node < self.n_nodes and next_node < self.n_nodes and
                     self.J[current_node, next_node] != np.inf):
@@ -116,13 +112,11 @@ class BinaryQAOAPostProcessor:
                     path.append(next_node)
                     path_cost += step_cost
                     
-                    # Обновляем трафик
                     current_traffic[current_node, next_node] += 1
                     current_traffic[next_node, current_node] += 1
                     
                     current_node = next_node
                 else:
-                    # Пытаемся найти альтернативный узел
                     found_alternative = False
                     for node in range(self.n_nodes):
                         if (node not in path and 
@@ -141,7 +135,6 @@ class BinaryQAOAPostProcessor:
                     if not found_alternative:
                         break
             
-            # Если не достигли цели, добавляем конечную вершину
             if path[-1] != end:
                 path.append(end)
                 
@@ -151,7 +144,7 @@ class BinaryQAOAPostProcessor:
         return paths, total_costs, current_traffic
     
     def conflict_repair(self, paths, traffic_matrix, capacity_matrix, lam_conflict=3.0):
-        """Устраняет конфликты в путях (аналогично greedy_conflict_repair из примера)"""
+        """Устраняет конфликты в путях"""
         repaired_paths = paths.copy()
         conf_adj = self.build_conflict_adjacency(paths, capacity_matrix)
         
@@ -167,17 +160,14 @@ class BinaryQAOAPostProcessor:
             if not conflict_pairs:
                 break
                 
-            # Находим лучшее исправление для первого конфликта
             ti, tj = conflict_pairs[0]
             best_improvement = (float('inf'), None, None)
             
-            # Пробуем изменить путь ti
             for alt_path in self.generate_alternative_paths(repaired_paths[ti], capacity_matrix):
                 improvement = self.evaluate_path_change(repaired_paths, ti, alt_path, conf_adj, lam_conflict)
                 if improvement < best_improvement[0]:
                     best_improvement = (improvement, ti, alt_path)
             
-            # Пробуем изменить путь tj        
             for alt_path in self.generate_alternative_paths(repaired_paths[tj], capacity_matrix):
                 improvement = self.evaluate_path_change(repaired_paths, tj, alt_path, conf_adj, lam_conflict)
                 if improvement < best_improvement[0]:
@@ -205,7 +195,7 @@ class BinaryQAOAPostProcessor:
                 for edge in common_edges:
                     u, v = edge
                     if (u < capacity_matrix.shape[0] and v < capacity_matrix.shape[1] and
-                        capacity_matrix[u, v] <= 1):  # Конфликт если capacity <= 1
+                        capacity_matrix[u, v] <= 1):
                         conf_adj[(i, tuple(path_i))].add((j, tuple(path_j)))
                         conf_adj[(j, tuple(path_j))].add((i, tuple(path_i)))
                         
@@ -233,14 +223,12 @@ class BinaryQAOAPostProcessor:
     
     def generate_alternative_paths(self, path, capacity_matrix, n_alternatives=3):
         """Генерирует альтернативные пути"""
-        alternatives = [path]  # Всегда включаем исходный путь
+        alternatives = [path]
         
         if len(path) <= 2:
             return alternatives
             
-        # Генерируем варианты с небольшими изменениями
         for i in range(1, len(path) - 1):
-            # Пропускаем промежуточную вершину
             new_path = path[:i] + path[i+1:]
             if self.is_valid_path(new_path, capacity_matrix):
                 alternatives.append(new_path)
@@ -264,21 +252,18 @@ class BinaryQAOAPostProcessor:
         old_conflicts = 0
         new_conflicts = 0
         
-        # Подсчитываем конфликты для старого пути
         for j, path_j in enumerate(paths):
             if j == changed_idx:
                 continue
             if (j, tuple(paths[j])) in conf_adj.get((changed_idx, tuple(paths[changed_idx])), set()):
                 old_conflicts += 1
         
-        # Подсчитываем конфликты для нового пути
         for j, path_j in enumerate(paths):
             if j == changed_idx:
                 continue
             if (j, tuple(paths[j])) in conf_adj.get((changed_idx, tuple(new_path)), set()):
                 new_conflicts += 1
                 
-        # Вычисляем изменение стоимости
         old_cost = self.calculate_path_cost(paths[changed_idx])
         new_cost = self.calculate_path_cost(new_path)
         
@@ -305,48 +290,44 @@ class BinaryQAOAPostProcessor:
         return total_time
 
 
-def load_quantum_results_from_folder(results_folder="results"):
-    """Автоматически загружает все результаты квантовых вычислений из папки results"""
-    all_graph_results = {}
+def load_quantum_results_for_graph(graph_idx, results_folder="results"):
+    """Загружает результаты только для одного графа"""
     
-    # Ищем все папки graph_N
-    graph_folders = glob.glob(os.path.join(results_folder, "graph_*"))
+    graph_folder = os.path.join(results_folder, f"graph_{graph_idx}")
     
-    for graph_folder in graph_folders:
-        # Извлекаем номер графа из имени папки
-        graph_name = os.path.basename(graph_folder)
-        graph_index = int(graph_name.split("_")[1])
-        
-        # Ищем все JSON файлы в папке
-        result_files = glob.glob(os.path.join(graph_folder, "Result_*.json"))
-        
-        # Сортируем файлы по номеру автомобиля
-        result_files.sort(key=lambda x: int(x.split("_car_")[1].split(".")[0]))
-        
-        # Загружаем результаты для каждого автомобиля
-        graph_results = []
-        for file_path in result_files:
-            try:
-                with open(file_path, 'r') as f:
-                    data = json.load(f)
-                
-                # Преобразуем в формат словаря counts
-                counts = {}
-                for item in data['data']:
-                    counts[item['bitstring']] = item['value']
-                    
-                graph_results.append(counts)
-                
-            except Exception as e:
-                print(f"Ошибка загрузки {file_path}: {e}")
-                graph_results.append({})
-        
-        all_graph_results[graph_index] = graph_results
+    if not os.path.exists(graph_folder):
+        print(f"  ПРЕДУПРЕЖДЕНИЕ: Папка {graph_folder} не найдена")
+        return []
     
-    return all_graph_results
+    # ИСПРАВЛЕНО: Используем тот же паттерн что и в оригинале
+    result_files = glob.glob(os.path.join(graph_folder, "Result_*.json"))
+    
+    if not result_files:
+        print(f"  ПРЕДУПРЕЖДЕНИЕ: Файлы для графа {graph_idx} не найдены")
+        return []
+    
+    # ИСПРАВЛЕНО: Точно такая же сортировка как в оригинале
+    result_files.sort(key=lambda x: int(os.path.basename(x).split("_car_")[1].split(".")[0]))
+    
+    print(f"  ✓ Найдено {len(result_files)} файлов результатов для графа {graph_idx}")
+    
+    graph_results = []
+    for file_path in result_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            counts = {}
+            for item in data['data']:
+                counts[item['bitstring']] = item['value']
+            graph_results.append(counts)
+        except Exception as e:
+            print(f"  ✗ Ошибка загрузки {os.path.basename(file_path)}: {e}")
+            graph_results.append({})
+    
+    return graph_results
 
 
-def print_detailed_paths(graph_idx, routes, initial_paths, repaired_paths, costs, total_time):
+def print_detailed_paths(graph_idx, routes, initial_paths, repaired_paths, costs, total_time, graph):
     """Выводит подробную информацию о путях машин"""
     print(f"\n{'='*60}")
     print(f"ГРАФ {graph_idx}: ДЕТАЛЬНАЯ ИНФОРМАЦИЯ О ПУТЯХ")
@@ -363,152 +344,235 @@ def print_detailed_paths(graph_idx, routes, initial_paths, repaired_paths, costs
         print(f"  Оптимизированный путь: {repaired_path}")
         print(f"  Время пути: {cost:.2f}")
         
-        # Проверяем, изменился ли путь после оптимизации
         if initial_path != repaired_path:
-            initial_cost = sum(abs(graph[initial_path[j], initial_path[j+1]]) 
-                             for j in range(len(initial_path)-1) 
-                             if graph[initial_path[j], initial_path[j+1]] != np.inf)
-            improvement = initial_cost - cost
-            if improvement > 0:
-                print(f"  УЛУЧШЕНИЕ: -{improvement:.2f} (с {initial_cost:.2f} до {cost:.2f})")
+            try:
+                initial_cost = sum(abs(graph[initial_path[j], initial_path[j+1]]) 
+                                 for j in range(len(initial_path)-1) 
+                                 if graph[initial_path[j], initial_path[j+1]] != np.inf)
+                improvement = initial_cost - cost
+                if improvement > 0:
+                    print(f"  УЛУЧШЕНИЕ: -{improvement:.2f} (с {initial_cost:.2f} до {cost:.2f})")
+            except Exception:
+                pass
         
         print(f"{'-'*40}")
 
 
-def post_process_all_graphs(graphs, all_routes, results_folder="results", output_dir="post_processed_results"):
-    """Постобработка для всех графов с автоматической загрузкой результатов и подробным выводом"""
+def post_process_single_graph(graph_idx, graph, routes, results_folder="results", output_dir="post_processed_results"):
+    """Обрабатывает один конкретный граф по его индексу"""
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    # Загружаем все квантовые результаты
-    quantum_results = load_quantum_results_from_folder(results_folder)
-    print(f"Загружено результатов для {len(quantum_results)} графов")
+    quantum_counts = load_quantum_results_for_graph(graph_idx, results_folder)
     
-    all_results = {}
-    total_time_summary = []
+    if not quantum_counts:
+        print(f"  ✗ Нет квантовых результатов для графа {graph_idx}")
+        return None
     
-    for graph_idx, graph in enumerate(graphs):
-        if graph_idx not in quantum_results:
-            print(f"Предупреждение: нет результатов для графа {graph_idx}")
-            continue
-            
-        n_nodes = len(graph)
-        n_qubits_per_node = math.ceil(math.log2(n_nodes)) if n_nodes > 0 else 0
-        
-        print(f"\n{'#'*80}")
-        print(f"ОБРАБОТКА ГРАФА {graph_idx}")
-        print(f"Количество вершин: {n_nodes}, Кубитов на вершину: {n_qubits_per_node}")
-        print(f"{'#'*80}")
-        
-        # Создаем процессор
-        processor = BinaryQAOAPostProcessor(graph, n_nodes, n_qubits_per_node)
-        
-        # Инициализируем матрицу трафика
-        traffic_matrix = np.zeros_like(graph)
-        capacity_matrix = np.where(graph != np.inf, 2, 0)  # Базовая пропускная способность
-        
-        # Строим пути
-        routes = all_routes[graph_idx] if graph_idx < len(all_routes) else []
-        quantum_counts = quantum_results[graph_idx]
-        
-        print(f"Обработка {len(routes)} машин...")
-        
-        paths, costs, updated_traffic = processor.greedy_path_construction(
-            quantum_counts, routes, traffic_matrix
-        )
-        
-        # Устраняем конфликты
-        repaired_paths = processor.conflict_repair(paths, updated_traffic, capacity_matrix)
-        
-        # Вычисляем общее время
-        total_time = processor.calculate_total_time(repaired_paths)
-        
-        # ВЫВОДИМ ПУТИ МАШИН В КОНСОЛЬ
-        print_detailed_paths(graph_idx, routes, paths, repaired_paths, costs, total_time)
-        
-        # Сохраняем результаты для этого графа
-        results = {
-            "graph_index": graph_idx,
-            "initial_paths": paths,
-            "repaired_paths": repaired_paths,
-            "path_costs": costs,
-            "final_traffic": updated_traffic.tolist(),
-            "total_cost": sum(costs),
-            "total_time": total_time,
-            "encoding_info": {
-                "n_nodes": n_nodes,
-                "n_qubits_per_node": n_qubits_per_node,
-                "binary_encoding": "vertex_index"
-            }
-        }
-        
-        output_file = os.path.join(output_dir, f"post_processed_routes_graph_{graph_idx}.json")
-        with open(output_file, 'w') as f:
-            json.dump(results, f, indent=2)
-        
-        all_results[graph_idx] = results
-        total_time_summary.append({
-            "graph_index": graph_idx,
-            "total_time": total_time
-        })
-        
-        print(f"\nРезультаты для графа {graph_idx} сохранены в {output_file}")
+    n_nodes = len(graph)
+    n_qubits_per_node = math.ceil(math.log2(n_nodes)) if n_nodes > 0 else 0
     
-    # Сохраняем суммарную статистику
-    summary_file = os.path.join(output_dir, "total_time_summary.json")
-    with open(summary_file, 'w') as f:
-        json.dump(total_time_summary, f, indent=2)
+    print(f"\n{'#'*80}")
+    print(f"ОБРАБОТКА ГРАФА {graph_idx}")
+    print(f"Количество вершин: {n_nodes}, Кубитов на вершину: {n_qubits_per_node}")
+    print(f"{'#'*80}")
     
-    # Вычисляем общее время для всех графов
-    overall_total_time = sum(item["total_time"] for item in total_time_summary)
+    processor = BinaryQAOAPostProcessor(graph, n_nodes, n_qubits_per_node)
+    traffic_matrix = np.zeros_like(graph)
+    capacity_matrix = np.where(graph != np.inf, 2, 0)
     
-    # ФИНАЛЬНЫЙ ВЫВОД
-    print(f"\n{'='*80}")
-    print(f"ФИНАЛЬНАЯ СТАТИСТИКА")
-    print(f"{'='*80}")
-    print(f"Обработано графов: {len(total_time_summary)}")
-    print(f"Общее время всех автомобилей во всех графах: {overall_total_time:.2f}")
+    print(f"Обработка {len(routes)} машин...")
     
-    # Детали по каждому графу
-    print(f"\nДетали по графам:")
-    for item in total_time_summary:
-        print(f"  Граф {item['graph_index']}: {item['total_time']:.2f}")
-    
-    return all_results, overall_total_time
-
-
-# Пример использования
-if __name__ == "__main__":
-    # Загружаем граф и маршруты (аналогично основному коду)
-    def load_graphs_from_file(filename):
-        with open(filename, 'r', encoding='utf-8') as f:
-            content = f.read()
-            content = content.replace('inf', 'np.inf')
-            graphs = eval(content)
-            graphs = [np.array(graph) for graph in graphs]
-            return graphs
-
-    def load_routes_from_file(filename):
-        with open(filename, 'r', encoding='utf-8') as f:
-            content = f.read()
-            routes = eval(content)
-            return routes
-
-    # Загружаем данные
-    graph_file = "C:\\Users\\oppoe\\Desktop\\mini_G_set (2).txt"
-    routes_file = "C:\\Users\\oppoe\\Desktop\\mini_routes (2).txt"
-    
-    graphs = load_graphs_from_file(graph_file)
-    all_routes = load_routes_from_file(routes_file)
-    
-    # Запускаем постобработку для всех графов
-    results, total_time = post_process_all_graphs(
-        graphs, 
-        all_routes, 
-        results_folder="results",  # Папка с результатами
-        output_dir="post_processed_results"
+    paths, costs, updated_traffic = processor.greedy_path_construction(
+        quantum_counts, routes, traffic_matrix
     )
     
-    print(f"\nОбработка завершена!")
-    print(f"Итоговое общее время: {total_time:.2f}")
+    repaired_paths = processor.conflict_repair(paths, updated_traffic, capacity_matrix)
+    total_time = processor.calculate_total_time(repaired_paths)
+    
+    # ИСПРАВЛЕНО: Передаем параметр graph
+    print_detailed_paths(graph_idx, routes, paths, repaired_paths, costs, total_time, graph)
+    
+    results = {
+        "graph_index": graph_idx,
+        "initial_paths": paths,
+        "repaired_paths": repaired_paths,
+        "path_costs": costs,
+        "final_traffic": updated_traffic.tolist(),
+        "total_cost": sum(costs),
+        "total_time": total_time,
+        "encoding_info": {
+            "n_nodes": n_nodes,
+            "n_qubits_per_node": n_qubits_per_node,
+            "binary_encoding": "vertex_index",
+        },
+    }
+    
+    output_file = os.path.join(output_dir, f"post_processed_routes_graph_{graph_idx}.json")
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+        print(f"\n✓ Результаты для графа {graph_idx} сохранены в {output_file}")
+    except Exception as e:
+        print(f"✗ Ошибка при сохранении результата для графа {graph_idx}: {e}")
+        traceback.print_exc()
+    
+    return results
+
+
+def load_graphs_from_file(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        content = f.read()
+        content = content.replace('inf', 'np.inf')
+        graphs = eval(content)
+        graphs = [np.array(graph) for graph in graphs]
+        return graphs
+
+
+def load_routes_from_file(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        content = f.read()
+        routes = eval(content)
+        return routes
+
+
+def check_graph_has_all_results(graph_idx, routes, results_folder):
+    """Проверяет, что для графа есть результаты для всех машин"""
+    graph_folder = os.path.join(results_folder, f"graph_{graph_idx}")
+    
+    if not os.path.exists(graph_folder):
+        return False
+    
+    result_files = glob.glob(os.path.join(graph_folder, "Result_*.json"))
+    
+    expected_count = len(routes)
+    actual_count = len(result_files)
+    
+    if actual_count < expected_count:
+        return False
+    
+    return True
+
+
+def background_postprocessor(graph_file, routes_file, results_folder, output_dir, force_reprocess=False):
+    """
+    Фоновый цикл с обработкой ошибок, ждущий появления новых данных и выполняющий постобработку.
+    """
+    
+    print("="*80)
+    print("ЗАПУСК ФОНОВОГО ПОСТПРОЦЕССОРА")
+    print("="*80)
+    print(f"Файл графов: {graph_file}")
+    print(f"Файл маршрутов: {routes_file}")
+    print(f"Папка с результатами: {results_folder}")
+    print(f"Папка для сохранения: {output_dir}")
+    print(f"Интервал проверки: {CHECK_INTERVAL} сек")
+    print(f"Переобработка: {'ДА' if force_reprocess else 'НЕТ'}")
+    print("="*80)
+    
+    try:
+        print("\nЗагрузка графов...")
+        graphs = load_graphs_from_file(graph_file)
+        print(f"✓ Загружено графов: {len(graphs)}")
+    except Exception as e:
+        print(f"✗ КРИТИЧЕСКАЯ ОШИБКА при загрузке графов: {e}")
+        traceback.print_exc()
+        return
+    
+    try:
+        print("Загрузка маршрутов...")
+        all_routes = load_routes_from_file(routes_file)
+        print(f"✓ Загружено наборов маршрутов: {len(all_routes)}")
+    except Exception as e:
+        print(f"✗ КРИТИЧЕСКАЯ ОШИБКА при загрузке маршрутов: {e}")
+        traceback.print_exc()
+        return
+    
+    print("\nВхожу в цикл мониторинга...\n")
+    
+    while True:
+        try:
+            existing_graphs = set()
+            
+            if os.path.exists(results_folder):
+                graph_folders = glob.glob(os.path.join(results_folder, "graph_*"))
+                
+                for graph_folder in graph_folders:
+                    try:
+                        graph_name = os.path.basename(graph_folder)
+                        graph_index = int(graph_name.split("_")[1])
+                        
+                        if graph_index < len(all_routes):
+                            if check_graph_has_all_results(graph_index, all_routes[graph_index], results_folder):
+                                existing_graphs.add(graph_index)
+                    except Exception:
+                        continue
+            
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+            
+            if force_reprocess:
+                processed_graphs = set()
+            else:
+                processed_files = glob.glob(os.path.join(output_dir, "post_processed_routes_graph_*.json"))
+                processed_graphs = set()
+                for pf in processed_files:
+                    try:
+                        idx = int(os.path.basename(pf).split("_")[-1].split(".")[0])
+                        processed_graphs.add(idx)
+                    except Exception:
+                        continue
+            
+            new_graphs = existing_graphs - processed_graphs
+            
+            if new_graphs:
+                print(f"\n{'='*80}")
+                print(f"✓ {'Переобработка' if force_reprocess else 'Найдены новые'} графы: {sorted(new_graphs)}")
+                print(f"{'='*80}")
+                
+                for idx in sorted(new_graphs):
+                    try:
+                        if idx >= len(graphs) or idx >= len(all_routes):
+                            continue
+                        
+                        print(f"\n>>> Запускаю постобработку графа {idx}")
+                        
+                        result = post_process_single_graph(
+                            idx, 
+                            graphs[idx], 
+                            all_routes[idx],
+                            results_folder=results_folder, 
+                            output_dir=output_dir
+                        )
+                        
+                        if result:
+                            print(f"✓ Граф {idx} успешно обработан")
+                        else:
+                            print(f"✗ Граф {idx} - обработка вернула None")
+                            
+                    except Exception as exc:
+                        print(f"✗ ОШИБКА при обработке графа {idx}: {exc}")
+                        traceback.print_exc()
+            else:
+                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Нет новых данных. Ожидание...")
+            
+            time.sleep(CHECK_INTERVAL)
+            
+        except KeyboardInterrupt:
+            print("\n\n✓ Получен сигнал прерывания. Завершение работы...")
+            break
+            
+        except Exception as main_exc:
+            print(f"\n✗ ГЛАВНАЯ ОШИБКА в фоновом цикле: {main_exc}")
+            traceback.print_exc()
+            time.sleep(CHECK_INTERVAL)
+
+
+if __name__ == "__main__":
+    graph_file = r"D:\hack\mini_G_set.txt"
+    routes_file = r"D:\hack\mini_routes.txt"
+    results_folder = "results"
+    output_dir = "post_processed_results"
+    
+    background_postprocessor(graph_file, routes_file, results_folder, output_dir, force_reprocess=FORCE_REPROCESS)
