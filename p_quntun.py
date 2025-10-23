@@ -570,8 +570,8 @@ def background_postprocessor(graph_file, routes_file, results_folder, output_dir
 
 
 if __name__ == "__main__":
-    graph_file = r"D:\hack\mini_G_set.txt"
-    routes_file = r"D:\hack\mini_routes.txt"
+    graph_file = r"D:\\hack\\G_set1.txt"
+    routes_file = r"D:\\hack\\routes1.txt"
     results_folder = "results"
     output_dir = "post_processed_results"
     
