@@ -15,65 +15,135 @@
     <p v-if="message" class="message">{{ message }}</p>
     <p v-if="error" class="error">{{ error }}</p>
 
-    <!-- ГАЛЕРЕЯ PNG ИЗ visualised_qi -->
+    <!-- ===== QI: визуализации квант-вдохновлённого ===== -->
     <div class="gallery-container">
       <div class="controls">
-        <button class="btn" @click="toggleList">
-          {{ showList ? 'Скрыть визуализации' : 'Показать визуализации' }}
+        <button class="btn" @click="toggleListQi">
+          {{ showListQi ? 'Скрыть визуализации квант-вдохновлённого алгоритма' : 'Показать визуализации квант-вдохновлённого алгоритма' }}
+        </button>
+        <button
+          v-if="showListQi"
+          class="btn secondary"
+          @click="downloadCsvQi"
+          aria-label="Скачать submission.csv и total_time.csv (QI)"
+          title="Скачать submission.csv и total_time.csv (QI)"
+          style="margin-left: 8px;"
+        >
+          Скачать CSV (QI)
         </button>
       </div>
-      <!-- Кнопка видна только если есть graph_min.png -->
-        <button
-          v-if="hasGraphMin"
-          class="btn accent"
-          @click="openGraphMin"
-          aria-label="Открыть граф с минимальным временем"
-        >
-          граф с минимальным временем
-        </button>
 
-      <div v-if="showList" class="content">
+      <button
+        v-if="hasGraphMinQi"
+        class="btn accent"
+        @click="openGraphMinQi"
+        aria-label="Открыть graph_min.png (QI)"
+      >
+        граф с минимальным временем (QI)
+      </button>
+
+      <div v-if="showListQi" class="content">
         <div class="list">
           <div class="list-title">Файлы (PNG)</div>
           <ul class="files">
             <li
-              v-for="(f, idx) in files"
-              :key="idx"
-              :class="{ active: f === selected }"
-              @click="select(f)"
+              v-for="(f, idx) in filesQi"
+              :key="'qi-'+idx"
+              :class="{ active: f === selectedQi }"
+              @click="selectQi(f)"
               title="Открыть превью"
             >
               {{ f }}
             </li>
-            <li v-if="files.length === 0" class="empty">Пока пусто</li>
+            <li v-if="filesQi.length === 0" class="empty">Пока пусто</li>
           </ul>
-          <button class="btn secondary" @click="refresh" :disabled="loadingList">
-            {{ loadingList ? 'Обновляю...' : 'Обновить список' }}
+          <button class="btn secondary" @click="refreshQi" :disabled="loadingListQi">
+            {{ loadingListQi ? 'Обновляю...' : 'Обновить список' }}
           </button>
         </div>
 
-        <!-- Компактное превью с кнопкой закрытия -->
-        <div class="preview" v-if="selected && showPreview">
+        <div class="preview" v-if="selectedQi && showPreviewQi">
           <div class="preview-header">
-            <div class="preview-title" :title="selected">{{ selected }}</div>
-            <button class="close-btn" @click="closePreview" aria-label="Закрыть превью">×</button>
+            <div class="preview-title" :title="selectedQi">{{ selectedQi }}</div>
+            <button class="close-btn" @click="closePreviewQi" aria-label="Закрыть превью">×</button>
           </div>
-
           <div class="preview-body">
             <img
-              :src="imageUrl(selected)"
+              :src="imageUrlQi(selectedQi)"
               alt="preview"
               class="img"
               @error="onImgError"
             />
           </div>
-
           <div class="hint">Кликни по имени файла слева, чтобы открыть другое изображение</div>
         </div>
+        <div class="preview placeholder" v-else>Выберите файл слева</div>
+      </div>
+    </div>
 
-        <div class="preview placeholder" v-else>
-          Выберите файл слева
+    <!-- ===== QF: визуализации полного квантового ===== -->
+    <div class="gallery-container">
+      <div class="controls">
+        <button class="btn" @click="toggleListQf">
+          {{ showListQf ? 'Скрыть визуализации полного квантового алгоритма' : 'Показать визуализации полного квантового алгоритма' }}
+        </button>
+        <button
+          v-if="showListQf"
+          class="btn secondary"
+          @click="downloadCsvQf"
+          aria-label="Скачать submission.csv и total_time.csv (QF)"
+          title="Скачать submission.csv и total_time.csv (QF)"
+          style="margin-left: 8px;"
+        >
+          Скачать CSV (QF)
+        </button>
+      </div>
+
+      <button
+        v-if="hasGraphMinQf"
+        class="btn accent"
+        @click="openGraphMinQf"
+        aria-label="Открыть graph_min.png (QF)"
+      >
+        граф с минимальным временем (QF)
+      </button>
+
+      <div v-if="showListQf" class="content">
+        <div class="list">
+          <div class="list-title">Файлы (PNG)</div>
+          <ul class="files">
+            <li
+              v-for="(f, idx) in filesQf"
+              :key="'qf-'+idx"
+              :class="{ active: f === selectedQf }"
+              @click="selectQf(f)"
+              title="Открыть превью"
+            >
+              {{ f }}
+            </li>
+            <li v-if="filesQf.length === 0" class="empty">Пока пусто</li>
+          </ul>
+          <button class="btn secondary" @click="refreshQf" :disabled="loadingListQf">
+            {{ loadingListQf ? 'Обновляю...' : 'Обновить список' }}
+          </button>
         </div>
+
+        <div class="preview" v-if="selectedQf && showPreviewQf">
+          <div class="preview-header">
+            <div class="preview-title" :title="selectedQf">{{ selectedQf }}</div>
+            <button class="close-btn" @click="closePreviewQf" aria-label="Закрыть превью">×</button>
+          </div>
+          <div class="preview-body">
+            <img
+              :src="imageUrlQf(selectedQf)"
+              alt="preview"
+              class="img"
+              @error="onImgError"
+            />
+          </div>
+          <div class="hint">Кликни по имени файла слева, чтобы открыть другое изображение</div>
+        </div>
+        <div class="preview placeholder" v-else>Выберите файл слева</div>
       </div>
     </div>
   </div>
@@ -92,21 +162,31 @@ export default {
       message: "",
       error: "",
 
-      // галерея
-      showList: false,
-      files: [],
-      selected: "",
-      showPreview: false,
-      loadingList: false,
+      // QI
+      showListQi: false,
+      filesQi: [],
+      selectedQi: "",
+      showPreviewQi: false,
+      loadingListQi: false,
+      baseListUrlQi: "http://127.0.0.1:8000/visualised_qi/",
+      baseImgUrlQi: "http://127.0.0.1:8000/static/visualised_qi/",
 
-      baseListUrl: "http://127.0.0.1:8000/visualised_qi/",
-      baseImgUrl: "http://127.0.0.1:8000/static/visualised_qi/",
+      // QF
+      showListQf: false,
+      filesQf: [],
+      selectedQf: "",
+      showPreviewQf: false,
+      loadingListQf: false,
+      baseListUrlQf: "http://127.0.0.1:8000/visualised_qf/",
+      baseImgUrlQf: "http://127.0.0.1:8000/static/quant_full/visualised_qf/",
     };
   },
   computed: {
-    // Есть ли в списке graph_min.png
-    hasGraphMin() {
-      return this.files.includes("graph_min.png");
+    hasGraphMinQi() {
+      return this.filesQi.includes("graph_min.png");
+    },
+    hasGraphMinQf() {
+      return this.filesQf.includes("graph_min.png");
     },
   },
   methods: {
@@ -118,6 +198,8 @@ export default {
       try {
         const res = await axios.post("http://127.0.0.1:8000/quant_inspired/");
         this.message = res.data?.message ?? "Готово.";
+        // опционально: автообновление списка
+        if (this.showListQi) this.refreshQi();
       } catch (e) {
         console.error(e);
         this.error = "Ошибка при запуске квант-вдохновлённого алгоритма.";
@@ -132,6 +214,7 @@ export default {
       try {
         const res = await axios.post("http://127.0.0.1:8000/quant_full/");
         this.message = res.data?.message ?? "Готово.";
+        if (this.showListQf) this.refreshQf();
       } catch (e) {
         console.error(e);
         this.error = "Ошибка при запуске полного квантового алгоритма.";
@@ -140,56 +223,104 @@ export default {
       }
     },
 
-    // ===== галерея PNG =====
-    toggleList() {
-      this.showList = !this.showList;
-      if (this.showList && this.files.length === 0) this.refresh();
+    // ===== QI gallery =====
+    toggleListQi() {
+      this.showListQi = !this.showListQi;
+      if (this.showListQi && this.filesQi.length === 0) this.refreshQi();
     },
-    async refresh() {
-      this.loadingList = true;
+    async refreshQi() {
+      this.loadingListQi = true;
       try {
-        const { data } = await axios.get(this.baseListUrl);
-        this.files = data.files || [];
-        if (!this.files.includes(this.selected)) {
-          this.selected = "";
-          this.showPreview = false;
+        const { data } = await axios.get(this.baseListUrlQi);
+        this.filesQi = data.files || [];
+        if (!this.filesQi.includes(this.selectedQi)) {
+          this.selectedQi = "";
+          this.showPreviewQi = false;
         }
       } catch (e) {
-        console.error("Не удалось получить список PNG:", e);
-        alert("Ошибка при получении списка изображений.");
+        console.error("Не удалось получить список PNG (QI):", e);
+        alert("Ошибка при получении изображений (QI).");
       } finally {
-        this.loadingList = false;
+        this.loadingListQi = false;
       }
     },
-    select(f) {
-      this.selected = f;
-      this.showPreview = true; // открываем компактное превью при выборе
+    selectQi(f) {
+      this.selectedQi = f;
+      this.showPreviewQi = true;
     },
-    imageUrl(filename) {
-      // cache-busting
-      return `${this.baseImgUrl}${encodeURIComponent(filename)}?t=${Date.now()}`;
+    imageUrlQi(filename) {
+      return `${this.baseImgUrlQi}${encodeURIComponent(filename)}?t=${Date.now()}`;
     },
-    closePreview() {
-      this.showPreview = false;
+    closePreviewQi() {
+      this.showPreviewQi = false;
     },
+
+    // ===== QF gallery =====
+    toggleListQf() {
+      this.showListQf = !this.showListQf;
+      if (this.showListQf && this.filesQf.length === 0) this.refreshQf();
+    },
+    async refreshQf() {
+      this.loadingListQf = true;
+      try {
+        const { data } = await axios.get(this.baseListUrlQf);
+        this.filesQf = data.files || [];
+        if (!this.filesQf.includes(this.selectedQf)) {
+          this.selectedQf = "";
+          this.showPreviewQf = false;
+        }
+      } catch (e) {
+        console.error("Не удалось получить список PNG (QF):", e);
+        alert("Ошибка при получении изображений (QF).");
+      } finally {
+        this.loadingListQf = false;
+      }
+    },
+    selectQf(f) {
+      this.selectedQf = f;
+      this.showPreviewQf = true;
+    },
+    imageUrlQf(filename) {
+      return `${this.baseImgUrlQf}${encodeURIComponent(filename)}?t=${Date.now()}`;
+    },
+    closePreviewQf() {
+      this.showPreviewQf = false;
+    },
+
+    // общие
     onImgError() {
       alert("Не удалось загрузить изображение. Проверьте, что файл существует.");
     },
 
-    // Открыть graph_min.png, если он есть
-    openGraphMin() {
-      if (!this.hasGraphMin) return;
-      this.selected = "graph_min.png";
-      this.showPreview = true;
-      this.showList = true; // раскроем список, чтобы было видно контекст
-      this.$nextTick(() => {
-        const el = this.$el.querySelector(".preview");
-        el?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+    // ===== скачивание CSV =====
+    downloadCsvQi() {
+      // ZIP с submission.csv (или submissions.csv) + total_time.csv из корня back/
+      window.location.href = "http://127.0.0.1:8000/download/csv/bundle/qi";
+    },
+    downloadCsvQf() {
+      // ZIP с CSV из back/quant_full/
+      window.location.href = "http://127.0.0.1:8000/download/csv/bundle/qf";
+    },
+
+    // быстрый доступ к минимальному графу
+    openGraphMinQi() {
+      if (!this.hasGraphMinQi) return;
+      this.selectedQi = "graph_min.png";
+      this.showPreviewQi = true;
+      this.showListQi = true;
+      this.$nextTick(() => this.$el.querySelector(".preview")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    },
+    openGraphMinQf() {
+      if (!this.hasGraphMinQf) return;
+      this.selectedQf = "graph_min.png";
+      this.showPreviewQf = true;
+      this.showListQf = true;
+      this.$nextTick(() => this.$el.querySelectorAll(".preview")?.[1]?.scrollIntoView({ behavior: "smooth", block: "start" }));
     },
   },
 };
 </script>
+
 
 <style scoped>
 .quant-container {

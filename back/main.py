@@ -5,6 +5,9 @@ from fastapi.responses import FileResponse
 from starlette.staticfiles import StaticFiles
 from pathlib import Path
 import shutil
+from zipfile import ZipFile
+from uuid import uuid4
+from starlette.background import BackgroundTask
 import os
 
 import quantum_inspired
@@ -23,7 +26,11 @@ app.add_middleware(
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
 SERVER_DIR = BASE_DIR / "server"
-VIS_DIR    = BASE_DIR / "visualised_qi"
+VIS_DIR = BASE_DIR / "visualised_qi"
+VIS_QI_DIR = BASE_DIR / "visualised_qi"
+
+QF_DIR    = BASE_DIR / "quant_full"
+VIS_QF_DIR= QF_DIR / "visualised_qf"
 
 for p in (UPLOAD_DIR, SERVER_DIR, VIS_DIR):
     p.mkdir(parents=True, exist_ok=True)
@@ -97,18 +104,125 @@ async def get_visualised_png(filename: str):
         raise HTTPException(status_code=404, detail="Image not found")
     return FileResponse(str(path), media_type="image/png", filename=filename)
 
-# ==== (необязательно) явные ручки под CSV, если хочешь использовать /download/... ====
-@app.get("/download/submissions.csv")
-async def download_submissions_csv():
-    # сначала пробуем submissions.csv, потом fallback на submission.csv
-    for candidate in (BASE_DIR / "submissions.csv", BASE_DIR / "submission.csv"):
+# ==== визуализации FULL ====
+@app.get("/visualised_qf/")
+async def list_visualised_qf_pngs():
+    files = sorted([p.name for p in VIS_QF_DIR.glob("*.png") if p.is_file()])
+    return {"files": files, "urls": [f"/static/quant_full/visualised_qf/{name}" for name in files]}
+
+@app.get("/visualised_qf/{filename}")
+async def get_visualised_qf_png(filename: str):
+    path = VIS_QF_DIR / filename
+    if not (path.is_file() and path.suffix.lower() == ".png"):
+        raise HTTPException(status_code=404, detail="Image not found")
+    return FileResponse(str(path), media_type="image/png", filename=filename)
+
+
+# ==== CSV download (ручки для кнопок) ====
+def _csv_file_response(path: Path, download_name: str) -> FileResponse:
+    if not (path.exists() and path.is_file()):
+        raise HTTPException(status_code=404, detail=f"{download_name} not found")
+    return FileResponse(str(path), media_type="text/csv", filename=download_name)
+
+@app.get("/download/submission.csv")
+async def download_submission_csv():
+    for candidate in (BASE_DIR / "submission.csv", BASE_DIR / "submissions.csv"):
         if candidate.exists():
-            return FileResponse(str(candidate), media_type="text/csv", filename="submissions.csv")
-    raise HTTPException(status_code=404, detail="submissions.csv not found")
+            return _csv_file_response(candidate, "submission.csv")
+    raise HTTPException(status_code=404, detail="submission.csv not found")
+
+@app.head("/download/submission.csv")
+async def head_submission_csv():
+    return await download_submission_csv()
 
 @app.get("/download/total_time.csv")
 async def download_total_time_csv():
-    path = BASE_DIR / "total_time.csv"
-    if not path.exists():
-        raise HTTPException(status_code=404, detail="total_time.csv not found")
-    return FileResponse(str(path), media_type="text/csv", filename="total_time.csv")
+    return _csv_file_response(BASE_DIR / "total_time.csv", "total_time.csv")
+
+@app.head("/download/total_time.csv")
+async def head_total_time_csv():
+    return await download_total_time_csv()
+
+# ==== CSV helpers/downloads ====
+def _csv_file_response(path: Path, download_name: str) -> FileResponse:
+    if not (path.exists() and path.is_file()):
+        raise HTTPException(status_code=404, detail=f"{download_name} not found")
+    return FileResponse(str(path), media_type="text/csv", filename=download_name)
+
+# --- Вдохновлённый (root back/)
+@app.get("/download/submission.csv")
+async def download_submission_csv():
+    for candidate in (BASE_DIR / "submission.csv", BASE_DIR / "submissions.csv"):
+        if candidate.exists():
+            return _csv_file_response(candidate, "submission.csv")
+    raise HTTPException(status_code=404, detail="submission.csv not found")
+
+@app.head("/download/submission.csv")
+async def head_submission_csv():
+    return await download_submission_csv()
+
+@app.get("/download/total_time.csv")
+async def download_total_time_csv():
+    return _csv_file_response(BASE_DIR / "total_time.csv", "total_time.csv")
+
+@app.head("/download/total_time.csv")
+async def head_total_time_csv():
+    return await download_total_time_csv()
+
+# --- Полный (quant_full/)
+@app.get("/download/full/submission.csv")
+async def download_full_submission_csv():
+    for candidate in (QF_DIR / "submission.csv", QF_DIR / "submissions.csv"):
+        if candidate.exists():
+            return _csv_file_response(candidate, "submission.csv")
+    raise HTTPException(status_code=404, detail="submission.csv not found in quant_full")
+
+@app.head("/download/full/submission.csv")
+async def head_full_submission_csv():
+    return await download_full_submission_csv()
+
+@app.get("/download/full/total_time.csv")
+async def download_full_total_time_csv():
+    return _csv_file_response(QF_DIR / "total_time.csv", "total_time.csv")
+
+@app.head("/download/full/total_time.csv")
+async def head_full_total_time_csv():
+    return await download_full_total_time_csv()
+
+# --- ZIP bundle (надёжно качает "оба файла" одним кликом)
+def _make_bundle(files: list[tuple[Path, str]]) -> FileResponse:
+    files = [(p, n) for p, n in files if p.exists()]
+    if not files:
+        raise HTTPException(status_code=404, detail="No CSV files found")
+    tmp_zip = BASE_DIR / f"_tmp_{uuid4().hex}.zip"
+    with ZipFile(tmp_zip, "w") as zf:
+        for src, arcname in files:
+            zf.write(src, arcname)
+    cleanup = BackgroundTask(lambda: os.remove(tmp_zip) if tmp_zip.exists() else None)
+    return FileResponse(str(tmp_zip), media_type="application/zip", filename="results_csv.zip", background=cleanup)
+
+@app.get("/download/csv/bundle/qi")
+async def download_csv_bundle_qi():
+    files = [
+        (BASE_DIR / "submission.csv",  "submission.csv"),
+        (BASE_DIR / "submissions.csv", "submission.csv"),
+        (BASE_DIR / "total_time.csv",  "total_time.csv"),
+    ]
+    # приоритет нормального имени:
+    # если есть submission.csv — исключим submissions.csv
+    have_normal = (BASE_DIR / "submission.csv").exists()
+    if have_normal:
+        files = [f for f in files if f[0].name != "submissions.csv"]
+    return _make_bundle(files)
+
+@app.get("/download/csv/bundle/qf")
+async def download_csv_bundle_qf():
+    files = [
+        (QF_DIR / "submission.csv",  "submission.csv"),
+        (QF_DIR / "submissions.csv", "submission.csv"),
+        (QF_DIR / "total_time.csv",  "total_time.csv"),
+    ]
+    have_normal = (QF_DIR / "submission.csv").exists()
+    if have_normal:
+        files = [f for f in files if f[0].name != "submissions.csv"]
+    return _make_bundle(files)
