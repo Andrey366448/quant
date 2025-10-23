@@ -1,16 +1,16 @@
 
 services:
   backend:
-    build: ./backend            # Путь к Dockerfile бэкенда
-    container_name: backend     # Имя контейнера (по желанию)
+    build: ./back        # Путь к Dockerfile бэкенда
+    container_name: back    # Имя контейнера (по желанию)
     ports:
       - "8000:8000"             # Проброс порта 8000 на хост-машину
     networks:
       - app-network
 
   frontend:
-    build: ./frontend           # Путь к Dockerfile фронтенда
-    container_name: frontend    # Имя контейнера (по желанию)
+    build: ./front           # Путь к Dockerfile фронтенда
+    container_name: front    # Имя контейнера (по желанию)
     ports:
       - "8080:80"               # Проброс порта 80 контейнера (Nginx) на 8080 хоста
     depends_on:
