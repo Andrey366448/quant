@@ -568,5 +568,6 @@ if __name__ == "__main__":
     save_traffic_circuits_from_files(
         "G_set1.txt",
         "routes1.txt",
-        process_all_graphs=False,
+        process_all_graphs=True,
+
     )
