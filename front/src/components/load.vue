@@ -49,7 +49,6 @@ export default {
     },
     handleFileChange(event) {
       const files = event.target.files;
-      // Загрузка файлов на сервер
       this.uploadFiles(files);
     },
     async uploadFiles(files) {
@@ -80,7 +79,6 @@ export default {
       }   
     },
 
-    // Метод для очистки всех файлов
     async clearFiles() {
       try {
         const response = await axios.delete("http://127.0.0.1:8000/upload/clear/");
@@ -123,6 +121,8 @@ h2 {
 }
 
 .load-btn {
+  margin: 20px;
+  margin-left: 0px;
   background-color: #007bff;
   color: white;
   border: none;

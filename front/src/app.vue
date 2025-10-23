@@ -26,7 +26,7 @@ export default {
 <style>
 /* ====== Темная тема, аккуратные отступы и нормальная прокрутка ====== */
 :root{
-  --bg: #0f1216;
+  --bg:#0f1216;
   --text:#e8edf4;
   --muted:#9aa7b6;
   --primary:#5aa2ff;
@@ -36,6 +36,24 @@ export default {
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --shadow-soft: 0 6px 20px rgba(0,0,0,.28);
   --trans: .22s cubic-bezier(.2,.8,.2,1);
+  /* стеклянные подложки */
+  --panel: rgba(255,255,255,.02);
+  --panel-2: rgba(255,255,255,.015);
+}
+
+/* ...остальное без изменений... */
+
+/* База страницы */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);   /* было: несколько radial-gradient */
+  color: var(--text);
+  font: 500 16px/1.6 Avenir, Helvetica, Arial, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0px;
 }
 
 /* Плавная прокрутка по якорям */
@@ -47,16 +65,18 @@ html { scroll-behavior: smooth; }
 html, body {
   height: 100%;
   margin: 0;
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(90,162,255,.12), transparent 60%),
-    radial-gradient(900px 500px at 110% 0%, rgba(152,103,255,.10), transparent 60%),
+   background:
+    radial-gradient(150% 120% at 0% 0%,   rgba(90,162,255,.12),  transparent 70%),
+    radial-gradient(150% 120% at 100% 0%, rgba(152,103,255,.10), transparent 70%),
     var(--bg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, auto;
   color: var(--text);
   font: 500 16px/1.6 Avenir, Helvetica, Arial, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*
 
 /* Тонкие скроллбары (Firefox + WebKit) */
 :root { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.24) transparent; }
@@ -78,6 +98,7 @@ html, body {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  backdrop-filter: saturate(115%) blur(6px);
   gap: 20px;
 }
 
@@ -97,7 +118,7 @@ html, body {
   border-radius: calc(var(--radius) - 2px);
   box-shadow: var(--shadow-soft);
   position: sticky;
-  backdrop-filter: saturate(115%) blur(6px);
+  backdrop-filter: saturate(200%) blur(6px);
   -webkit-backdrop-filter: saturate(115%) blur(6px);
 }
 

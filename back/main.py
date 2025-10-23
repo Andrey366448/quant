@@ -11,12 +11,13 @@ from starlette.background import BackgroundTask
 import os
 
 import quantum_inspired
+import visualization_graph
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],       # можно ограничить на проде
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,8 +36,6 @@ VIS_QF_DIR= QF_DIR / "visualised_qf"
 for p in (UPLOAD_DIR, SERVER_DIR, VIS_DIR):
     p.mkdir(parents=True, exist_ok=True)
 
-# ✅ единый mount: всё из папки back отдаём по /static/*
-# это покроет и /static/visualised_qi/*.png, и /static/submission(s).csv, и /static/total_time.csv
 app.mount("/static", StaticFiles(directory=str(BASE_DIR)), name="static")
 
 # ==== upload API ====
@@ -83,7 +82,8 @@ async def upload_from_server():
 # ==== запуск алгоритмов ====
 @app.post("/quant_inspired/")
 async def quant_inspired():
-    quantum_inspired.main()
+    #quantum_inspired.main()
+    visualization_graph.main()
     return {"message": "Квантово-вдохновлённый алгоритм завершил работу"}
 
 @app.post("/quant_full/")
@@ -208,8 +208,6 @@ async def download_csv_bundle_qi():
         (BASE_DIR / "submissions.csv", "submission.csv"),
         (BASE_DIR / "total_time.csv",  "total_time.csv"),
     ]
-    # приоритет нормального имени:
-    # если есть submission.csv — исключим submissions.csv
     have_normal = (BASE_DIR / "submission.csv").exists()
     if have_normal:
         files = [f for f in files if f[0].name != "submissions.csv"]

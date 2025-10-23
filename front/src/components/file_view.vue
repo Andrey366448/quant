@@ -82,10 +82,6 @@ export default {
 
 <style scoped>
 .file-view-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: 600px;
   color: white;
@@ -93,15 +89,20 @@ export default {
 }
 
 .load-btn {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;           /* фиксируем высоту */
+  padding: 0 16px;        /* убираем вертикальные отступы */
+  font-size: 14px;        /* немного меньше шрифт */
+  border: none;
+  border-radius: 10px;
   background-color: #007bff;
   color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%;
+  width: 100%;            /* все кнопки одинаковой ширины внутри контейнера */
 }
 
 .load-btn:hover {
