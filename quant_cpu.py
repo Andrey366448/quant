@@ -885,8 +885,8 @@ def start_func(G_file_path, routes_file_path, result_file_path):
 
 # Пример использования
 if __name__ == "__main__":
-    graph_file = "G_set1.txt"
-    routes_file = "routes1.txt"
+    graph_file = "new_G_set.txt"
+    routes_file = "new_routes.txt"
     results_file = "results"
 
     # Проверяем существование файлов
