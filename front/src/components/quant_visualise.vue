@@ -12,8 +12,8 @@
       </button>
     </div>
 
-    <p v-if="message" class="message">{{ message }}</p>
-    <p v-if="error" class="error">{{ error }}</p>
+    <!-- <p v-if="message" class="message">{{ message }}</p>
+    <p v-if="error" class="error">{{ error }}</p> -->
 
     <!-- ===== QI: визуализации квант-вдохновлённого ===== -->
     <div class="gallery-container">

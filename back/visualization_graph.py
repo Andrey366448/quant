@@ -13,7 +13,7 @@ import heapq
 class QuantumInspiredTrafficOptimizer:
     """
     Квантово-вдохновленный оптимизатор дорожного трафика.
-    Реализует сведение к QUBO/Изинг с автоматической декомпозицией.
+    Реализует сведение к QUBО/Изинг с автоматической декомпозицией.
     """
 
     def __init__(self, graph, routes):
@@ -191,6 +191,9 @@ class TrafficVisualizer:
         edge_traffic = {}
 
         for route in routes:
+            # защита от мусора
+            if not isinstance(route, (list, tuple)) or len(route) < 2:
+                continue
             for i in range(len(route) - 1):
                 edge = tuple(sorted([route[i], route[i + 1]]))
                 edge_traffic[edge] = edge_traffic.get(edge, 0) + 1
@@ -401,29 +404,48 @@ class TrafficVisualizer:
             submission_df = pd.read_csv('submission_inspired.csv')
             time_df = pd.read_csv('total_time_inspired.csv')
 
+            # >>> FIX A: нормализуем graph_index и удаляем агрегатную строку в time_df
+            time_df['graph_index'] = pd.to_numeric(time_df['graph_index'], errors='coerce')
+            time_df = time_df.dropna(subset=['graph_index']).copy()
+            time_df['graph_index'] = time_df['graph_index'].astype(int)
+            time_dict = dict(zip(time_df['graph_index'], time_df['total_time']))
+
+            # >>> FIX B: парсим маршруты обратно и нормализуем graph_index в submission_df
+            def _parse_route(r):
+                if isinstance(r, str):
+                    try:
+                        return ast.literal_eval(r)
+                    except Exception:
+                        return None
+                return r
+
+            submission_df['route'] = submission_df['route'].apply(_parse_route)
+            submission_df['graph_index'] = pd.to_numeric(submission_df['graph_index'], errors='coerce')
+            submission_df = submission_df.dropna(subset=['graph_index', 'route']).copy()
+            submission_df['graph_index'] = submission_df['graph_index'].astype(int)
+
+            routes_by_graph = (
+                submission_df
+                .groupby('graph_index')['route']
+                .apply(list)
+                .to_dict()
+            )
+
+            # Нормализуем тип graph_index в исходном датафрейме графов
+            df['graph_index'] = pd.to_numeric(df['graph_index'], errors='coerce')
+            df = df.dropna(subset=['graph_index']).copy()
+            df['graph_index'] = df['graph_index'].astype(int)
+
             print(f"Загружено {len(df)} графов из {data_file}")
             print(f"Загружено {len(submission_df)} маршрутов из submission_inspired.csv")
             print(f"Загружено время из total_time_inspired.csv")
-
-            # Создаем словари для быстрого доступа
-            time_dict = {}
-            for _, row in time_df.iterrows():
-                if row['graph_index'] != 'Total':
-                    time_dict[row['graph_index']] = row['total_time']
-
-            routes_by_graph = {}
-            for _, row in submission_df.iterrows():
-                graph_idx = row['graph_index']
-                if graph_idx not in routes_by_graph:
-                    routes_by_graph[graph_idx] = []
-                routes_by_graph[graph_idx].append(row['route'])
 
             # Визуализируем каждый граф
             static_files = []
             successful_visualizations = 0
 
             for idx, row in df.iterrows():
-                graph_index = row['graph_index']
+                graph_index = int(row['graph_index'])
                 graph_matrix = parse_matrix(row['graph_matrix'])
 
                 if graph_matrix is None:

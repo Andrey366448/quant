@@ -1,24 +1,24 @@
-
 services:
   backend:
-    build: ./back        # Путь к Dockerfile бэкенда
-    container_name: back    # Имя контейнера (по желанию)
+    build: ./back
+    container_name: back
     ports:
-      - "8000:8000"             # Проброс порта 8000 на хост-машину
+      - "8000:8000"
+    restart: unless-stopped
     networks:
       - app-network
 
   frontend:
-    build: ./front           # Путь к Dockerfile фронтенда
-    container_name: front    # Имя контейнера (по желанию)
+    build: ./front
+    container_name: front
     ports:
-      - "8080:80"               # Проброс порта 80 контейнера (Nginx) на 8080 хоста
+      - "8080:80"
     depends_on:
-      - backend                 # Гарантирует, что backend стартует перед frontend
+      - backend
+    restart: unless-stopped
     networks:
       - app-network
 
-# Определяем общую сеть, чтобы фронтенд и бэкенд могли общаться
 networks:
   app-network:
     driver: bridge

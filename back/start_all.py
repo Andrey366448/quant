@@ -6,13 +6,13 @@ import signal
 import time
 
 # Константа - максимальное количество файлов
-MAX_FILES_COUNT = 10
+MAX_FILES_COUNT = 1
 
 def count_result_files():
     """
     Подсчитывает количество файлов с паттерном post_processed_routes_graph_*.json в директории results
     """
-    pattern = "results/post_processed_routes_graph_*.json"
+    pattern = "submission.csv"
     files = glob.glob(pattern)
     return len(files)
 

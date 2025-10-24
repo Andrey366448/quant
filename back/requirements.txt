@@ -5,4 +5,5 @@ matplotlib==3.10.7
 pandas==2.2.2
 networkx==3.3
 PyYAML==6.0.3
-numpy>=1.26,<3.0   # явный пин под pandas/matplotlib
+numpy>=1.26,<3.0          # явный пин под pandas/matplotlib
+qiskit>=1.0,<2.0          # сам Qiskit (Terra: QuantumCircuit и т.п.)
